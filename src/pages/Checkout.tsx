@@ -132,8 +132,8 @@ const Checkout = () => {
             
             {/* Order Summary - First on mobile, last on desktop */}
             <div className="lg:col-span-1 lg:order-2">
-              <div className="bg-muted/20 p-8 rounded-none sticky top-6">
-                <h2 className="text-lg font-light text-foreground mb-6">Order Summary</h2>
+              <div className="bg-brand-soft/60 p-8 rounded-none sticky top-6">
+                <h2 className="text-lg font-light text-foreground mb-6 pb-3 border-b-2 border-brand inline-block">Order Summary</h2>
                 
                 <div className="space-y-6">
                   {cartItems.map((item) => (
@@ -174,7 +174,7 @@ const Checkout = () => {
                           </Button>
                         </div>
                       </div>
-                      <div className="text-foreground font-medium">
+                      <div className="text-brand font-medium">
                         {item.price}
                       </div>
                     </div>
@@ -634,7 +634,7 @@ const Checkout = () => {
                     </div>
                     <div className="flex justify-between text-lg font-medium border-t border-muted-foreground/20 pt-3">
                       <span className="text-foreground">Total</span>
-                      <span className="text-foreground">€{total.toLocaleString()}</span>
+                      <span className="text-brand">€{total.toLocaleString()}</span>
                     </div>
                   </div>
 
@@ -648,8 +648,8 @@ const Checkout = () => {
                 </div>
               ) : (
                 <div className="text-center py-12">
-                  <div className="mx-auto w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-4">
-                    <Check className="h-8 w-8 text-green-600" />
+                  <div className="mx-auto w-16 h-16 bg-brand rounded-full flex items-center justify-center mb-4">
+                    <Check className="h-8 w-8 text-brand-foreground" />
                   </div>
                   <h3 className="text-xl font-light text-foreground mb-2">Order Complete!</h3>
                   <p className="text-muted-foreground">Thank you for your purchase. Your order confirmation has been sent to your email.</p>
