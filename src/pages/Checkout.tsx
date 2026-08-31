@@ -47,25 +47,18 @@ const Checkout = () => {
   const [paymentComplete, setPaymentComplete] = useState(false);
   
   // Mock cart data - in a real app this would come from state management
-  const [cartItems, setCartItems] = useState([
-    {
-      id: 1,
-      name: "Pantheon Ring",
-      price: "€2,450",
+  const [cartItems, setCartItems] = useState(
+    products.map((product) => ({
+      id: product.id,
+      name: product.name,
+      price: product.price,
       quantity: 1,
-      image: pantheonImage,
-      size: "54 EU / 7 US"
-    },
-    {
-      id: 2,
-      name: "Eclipse Earrings", 
-      price: "€1,850",
-      quantity: 1,
-      image: eclipseImage
-    }
-  ]);
+      image: product.image,
+      size: product.dimensions,
+    }))
+  );
 
-  const updateQuantity = (id: number, newQuantity: number) => {
+  const updateQuantity = (id: string, newQuantity: number) => {
     if (newQuantity <= 0) {
       setCartItems(items => items.filter(item => item.id !== id));
     } else {
@@ -76,6 +69,7 @@ const Checkout = () => {
       );
     }
   };
+
 
   const subtotal = cartItems.reduce((sum, item) => {
     const price = parseFloat(item.price.replace('€', '').replace(',', ''));
