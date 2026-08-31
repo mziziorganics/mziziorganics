@@ -2,11 +2,21 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Link } from "react-router-dom";
 import { products } from "@/data/products";
 
-const ProductCarousel = () => {
+interface ProductCarouselProps {
+  excludeId?: string;
+}
+
+const ProductCarousel = ({ excludeId }: ProductCarouselProps) => {
+  const visible = products.filter((product) => product.id !== excludeId);
+
   return (
     <section className="w-full mb-16 px-6">
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-8">
-        {products.map((product) => (
+      <div
+        className={`grid gap-6 md:gap-8 ${
+          visible.length > 1 ? "grid-cols-1 sm:grid-cols-2" : "grid-cols-1 sm:grid-cols-2 max-w-xl"
+        }`}
+      >
+        {visible.map((product) => (
           <Link key={product.id} to={`/product/${product.id}`}>
             <Card className="border-none shadow-none bg-transparent group">
               <CardContent className="p-0">
