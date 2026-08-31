@@ -64,7 +64,7 @@ const ProductDetail = () => {
               Complete the ritual
             </h2>
           </div>
-          <ProductCarousel />
+          <ProductCarousel excludeId={product.id} />
         </section>
       </main>
 
