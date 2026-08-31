@@ -9,20 +9,27 @@
     /* Core neutral palette */
     --background: 0 0% 100%;
     --foreground: 0 0% 9%;
-    
+
+    /* Brand — deep burgundy #5D0A1C */
+    --brand: 347 81% 20%;
+    --brand-foreground: 30 30% 96%;
+    --brand-soft: 347 40% 94%;
+    --brand-muted: 347 25% 55%;
+
     /* Status bar */
-    --status-bar: 0 0% 0%;
-    --status-bar-foreground: 0 0% 100%;
-    
+    --status-bar: 347 81% 20%;
+    --status-bar-foreground: 30 30% 96%;
+
     /* Navigation */
     --nav-background: 0 0% 100%;
     --nav-foreground: 0 0% 20%;
-    --nav-hover: 0 0% 5%;
+    --nav-hover: 347 81% 20%;
+
     
     /* Interactive elements */
-    --primary: 0 0% 9%;
-    --primary-foreground: 0 0% 98%;
-    --primary-hover: 0 0% 15%;
+    --primary: 347 81% 20%;
+    --primary-foreground: 30 30% 96%;
+    --primary-hover: 347 70% 27%;
     
     /* Subtle elements */
     --secondary: 0 0% 96%;
@@ -31,12 +38,13 @@
     --muted: 0 0% 96%;
     --muted-foreground: 0 0% 45%;
     
-    --accent: 0 0% 96%;
-    --accent-foreground: 0 0% 9%;
+    --accent: 347 40% 96%;
+    --accent-foreground: 347 81% 20%;
     
     --border: 0 0% 90%;
     --input: 0 0% 90%;
-    --ring: 0 0% 9%;
+    --ring: 347 81% 20%;
+
     
     /* Cards and surfaces */
     --card: 0 0% 100%;
@@ -75,16 +83,23 @@
     --background: 0 0% 9%;
     --foreground: 0 0% 98%;
     
-    --status-bar: 0 0% 0%;
-    --status-bar-foreground: 0 0% 100%;
+    --brand: 347 60% 42%;
+    --brand-foreground: 30 30% 96%;
+    --brand-soft: 347 30% 16%;
+    --brand-muted: 347 30% 65%;
+    
+    --status-bar: 347 60% 24%;
+    --status-bar-foreground: 30 30% 96%;
     
     --nav-background: 0 0% 9%;
     --nav-foreground: 0 0% 80%;
-    --nav-hover: 0 0% 95%;
+    --nav-hover: 347 60% 62%;
     
-    --primary: 0 0% 98%;
-    --primary-foreground: 0 0% 9%;
-    --primary-hover: 0 0% 90%;
+    --primary: 347 60% 42%;
+    --primary-foreground: 30 30% 96%;
+    --primary-hover: 347 60% 50%;
+    
+
     
     --secondary: 0 0% 15%;
     --secondary-foreground: 0 0% 80%;

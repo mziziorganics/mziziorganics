@@ -43,7 +43,7 @@ const StoreLocator = () => {
         <main className="w-full lg:w-[70vw] lg:ml-auto px-6">
         <PageHeader 
           title="Store Locator" 
-          subtitle="Visit us in person for a personalized jewelry experience"
+          subtitle="Visit us in person for a scalp consultation and a live look at the ritual"
         />
         
         <ContentSection title="Interactive Store Map">
@@ -93,7 +93,7 @@ const StoreLocator = () => {
         <ContentSection title="Private Appointments">
           <div className="space-y-6">
             <p className="text-lg text-muted-foreground leading-relaxed">
-              Experience personalized service with a private appointment. Our jewelry consultants will guide you through our collections, help with custom designs, and provide expert advice in a comfortable, private setting.
+              Book a private appointment and one of our scalp specialists will assess your hair density, demonstrate the correct rolling technique on your own scalp, and build a weekly schedule around your routine.
             </p>
             
             <div className="grid md:grid-cols-3 gap-8 mt-12">
@@ -129,7 +129,7 @@ const StoreLocator = () => {
           <div className="bg-muted/10 rounded-lg p-8">
             <h3 className="text-xl font-light text-foreground mb-4">Can't visit in person?</h3>
             <p className="text-muted-foreground mb-6">
-              Book a virtual consultation with one of our jewelry experts. We'll showcase pieces via video call, 
+              Book a virtual consultation with one of our scalp specialists. We'll walk through the ritual on video call, 
               answer your questions, and help you make the perfect selection from the comfort of your home.
             </p>
             <Button variant="outline" className="rounded-none">

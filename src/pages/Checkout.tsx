@@ -7,8 +7,8 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Checkbox } from "@/components/ui/checkbox";
-import pantheonImage from "@/assets/pantheon.jpg";
-import eclipseImage from "@/assets/eclipse.jpg";
+import { products } from "@/data/products";
+
 
 const Checkout = () => {
   const [showDiscountInput, setShowDiscountInput] = useState(false);
@@ -47,25 +47,18 @@ const Checkout = () => {
   const [paymentComplete, setPaymentComplete] = useState(false);
   
   // Mock cart data - in a real app this would come from state management
-  const [cartItems, setCartItems] = useState([
-    {
-      id: 1,
-      name: "Pantheon Ring",
-      price: "€2,450",
+  const [cartItems, setCartItems] = useState(
+    products.map((product) => ({
+      id: product.id,
+      name: product.name,
+      price: product.price,
       quantity: 1,
-      image: pantheonImage,
-      size: "54 EU / 7 US"
-    },
-    {
-      id: 2,
-      name: "Eclipse Earrings", 
-      price: "€1,850",
-      quantity: 1,
-      image: eclipseImage
-    }
-  ]);
+      image: product.image,
+      size: product.dimensions,
+    }))
+  );
 
-  const updateQuantity = (id: number, newQuantity: number) => {
+  const updateQuantity = (id: string, newQuantity: number) => {
     if (newQuantity <= 0) {
       setCartItems(items => items.filter(item => item.id !== id));
     } else {
@@ -76,6 +69,7 @@ const Checkout = () => {
       );
     }
   };
+
 
   const subtotal = cartItems.reduce((sum, item) => {
     const price = parseFloat(item.price.replace('€', '').replace(',', ''));
@@ -138,8 +132,8 @@ const Checkout = () => {
             
             {/* Order Summary - First on mobile, last on desktop */}
             <div className="lg:col-span-1 lg:order-2">
-              <div className="bg-muted/20 p-8 rounded-none sticky top-6">
-                <h2 className="text-lg font-light text-foreground mb-6">Order Summary</h2>
+              <div className="bg-brand-soft/60 p-8 rounded-none sticky top-6">
+                <h2 className="text-lg font-light text-foreground mb-6 pb-3 border-b-2 border-brand inline-block">Order Summary</h2>
                 
                 <div className="space-y-6">
                   {cartItems.map((item) => (
@@ -180,7 +174,7 @@ const Checkout = () => {
                           </Button>
                         </div>
                       </div>
-                      <div className="text-foreground font-medium">
+                      <div className="text-brand font-medium">
                         {item.price}
                       </div>
                     </div>
@@ -640,7 +634,7 @@ const Checkout = () => {
                     </div>
                     <div className="flex justify-between text-lg font-medium border-t border-muted-foreground/20 pt-3">
                       <span className="text-foreground">Total</span>
-                      <span className="text-foreground">€{total.toLocaleString()}</span>
+                      <span className="text-brand">€{total.toLocaleString()}</span>
                     </div>
                   </div>
 
@@ -654,8 +648,8 @@ const Checkout = () => {
                 </div>
               ) : (
                 <div className="text-center py-12">
-                  <div className="mx-auto w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-4">
-                    <Check className="h-8 w-8 text-green-600" />
+                  <div className="mx-auto w-16 h-16 bg-brand rounded-full flex items-center justify-center mb-4">
+                    <Check className="h-8 w-8 text-brand-foreground" />
                   </div>
                   <h3 className="text-xl font-light text-foreground mb-2">Order Complete!</h3>
                   <p className="text-muted-foreground">Thank you for your purchase. Your order confirmation has been sent to your email.</p>
