@@ -17,7 +17,7 @@ const Sustainability = () => {
         <main className="w-full lg:w-[70vw] lg:ml-auto px-6">
         <PageHeader 
           title="Sustainability" 
-          subtitle="Creating beautiful jewelry while protecting our planet for future generations"
+          subtitle="Small-batch care that leaves the soil, the growers and the shelf better than we found them"
         />
         
         <ContentSection title="Our Environmental Commitment">
@@ -25,13 +25,13 @@ const Sustainability = () => {
             <div className="space-y-6">
               <h3 className="text-xl font-light text-foreground">Ethical Sourcing</h3>
               <p className="text-muted-foreground leading-relaxed">
-                We partner only with suppliers who share our commitment to ethical practices. Every gemstone and precious metal in our collection is sourced responsibly, with full transparency in our supply chain.
+                We buy rosemary, castor and amla directly from growers' cooperatives, at prices agreed before harvest. Every batch is traceable back to the farm that pressed it.
               </p>
             </div>
             <div className="space-y-6">
-              <h3 className="text-xl font-light text-foreground">Recycled Materials</h3>
+              <h3 className="text-xl font-light text-foreground">Refillable Glass</h3>
               <p className="text-muted-foreground leading-relaxed">
-                Over 80% of our precious metals come from recycled sources, reducing the environmental impact of mining while maintaining the highest quality standards for our jewelry.
+                Our 30 ml bottles are amber glass with aluminium droppers — no plastic, no single-use pumps. Send six empties back and the seventh bottle is on us.
               </p>
             </div>
           </div>
@@ -45,7 +45,7 @@ const Sustainability = () => {
               </div>
               <div>
                 <div className="text-3xl font-light text-primary mb-2">90%</div>
-                <p className="text-sm text-muted-foreground">Recycled packaging materials</p>
+                <p className="text-sm text-muted-foreground">Plastic-free packaging</p>
               </div>
               <div>
                 <div className="text-3xl font-light text-primary mb-2">Zero</div>
@@ -58,20 +58,20 @@ const Sustainability = () => {
         <ContentSection title="Circular Economy">
           <div className="space-y-8">
             <p className="text-lg text-muted-foreground leading-relaxed">
-              We believe in the power of circular design - creating jewelry that can be treasured, repaired, and eventually recycled into new pieces.
+              We believe in circular care — bottles that come back to be refilled, and roller heads that are collected rather than binned.
             </p>
             
             <div className="grid md:grid-cols-2 gap-8">
               <div className="space-y-4">
-                <h3 className="text-lg font-light text-foreground">Lifetime Care</h3>
+                <h3 className="text-lg font-light text-foreground">Refill Programme</h3>
                 <p className="text-muted-foreground">
-                  Every piece comes with our lifetime care promise, including professional cleaning, repairs, and resizing services.
+                  Return your empty amber bottles in the prepaid pouch and we sterilise, refill and credit your next order.
                 </p>
               </div>
               <div className="space-y-4">
-                <h3 className="text-lg font-light text-foreground">Take-Back Program</h3>
+                <h3 className="text-lg font-light text-foreground">Roller Head Take-Back</h3>
                 <p className="text-muted-foreground">
-                  When you're ready for something new, we'll take back your Mzizi Organics jewelry to be recycled into future pieces.
+                  Used titanium roller heads are collected, safely processed and recycled — never sent to landfill in your household waste.
                 </p>
               </div>
             </div>
@@ -86,13 +86,13 @@ const Sustainability = () => {
             
             <div className="grid md:grid-cols-4 gap-8 items-center">
               <div className="h-16 w-32 bg-muted/10 rounded-lg flex items-center justify-center">
-                <span className="text-xs text-muted-foreground">RJC Certified</span>
+                <span className="text-xs text-muted-foreground">COSMOS Organic</span>
               </div>
               <div className="h-16 w-32 bg-muted/10 rounded-lg flex items-center justify-center">
                 <span className="text-xs text-muted-foreground">B Corp</span>
               </div>
               <div className="h-16 w-32 bg-muted/10 rounded-lg flex items-center justify-center">
-                <span className="text-xs text-muted-foreground">SCS Certified</span>
+                <span className="text-xs text-muted-foreground">Leaping Bunny</span>
               </div>
               <div className="h-16 w-32 bg-muted/10 rounded-lg flex items-center justify-center">
                 <span className="text-xs text-muted-foreground">Fair Trade</span>

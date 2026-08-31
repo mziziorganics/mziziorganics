@@ -91,7 +91,7 @@ const TermsOfService = () => {
             <section>
               <h2 className="text-2xl font-light text-foreground mb-4">Warranty and Care</h2>
               <p className="text-muted-foreground leading-relaxed">
-                Our jewelry comes with a limited warranty against manufacturing defects. This warranty does not cover damage from normal wear, improper care, or accidents. Proper care instructions are provided with each purchase and on our website.
+                Our products carry a limited warranty against manufacturing defects — a faulty dropper or roller head, for example. It does not cover normal wear of the roller head, misuse, or results, as hair and skin outcomes vary between individuals. Usage instructions are provided with each purchase and on our website.
               </p>
             </section>
 

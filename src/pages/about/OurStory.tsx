@@ -26,7 +26,7 @@ const OurStory = () => {
               image="/founders.png"
               imageAlt="Company founders"
               title="Founded on Passion"
-              content="Mzizi Organics was born from a shared vision of creating timeless pieces that transcend fleeting trends. Our founders, united by their passion for exceptional craftsmanship and sustainable practices, established the brand with a commitment to creating jewelry that tells a story - your story."
+              content="Mzizi means root. The brand was born in a small kitchen from one stubborn question: why do bathroom shelves overflow with hair products while so few of them ever reach the scalp? Our founders answered it by stripping everything back to two objects — a cold-pressed scalp oil and the tool that carries it deeper — and pressing each batch small enough that the actives are still alive when they arrive."
               imagePosition="left"
             />
           </ContentSection>

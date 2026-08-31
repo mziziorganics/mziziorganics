@@ -21,7 +21,7 @@ const CustomerCare = () => {
         <main className="w-full lg:w-[70vw] lg:ml-auto px-6">
         <PageHeader 
           title="Customer Care" 
-          subtitle="We're here to help you with all your jewelry needs"
+          subtitle="Questions about the ritual, your order or your scalp — we answer within one working day"
         />
         
         <ContentSection title="Contact Information">
@@ -68,16 +68,16 @@ const CustomerCare = () => {
 
             <AccordionItem value="warranty" className="border border-border rounded-lg px-6">
               <AccordionTrigger className="text-left hover:no-underline">
-                What warranty do you offer on your jewelry?
+                What warranty do you offer on your products?
               </AccordionTrigger>
               <AccordionContent className="text-muted-foreground">
-                All Mzizi Organics jewelry comes with a lifetime warranty against manufacturing defects. This includes free repairs for normal wear and tear, stone tightening, and professional cleaning.
+                Every Mzizi Organics product is covered for twelve months against manufacturing defects — a leaking dropper, a damaged roller head or a bent needle out of the box. We replace it, no return shipping charged.
               </AccordionContent>
             </AccordionItem>
 
             <AccordionItem value="sizing" className="border border-border rounded-lg px-6">
               <AccordionTrigger className="text-left hover:no-underline">
-                Can I resize my jewelry after purchase?
+                Can I use the roller if I have a sensitive scalp?
               </AccordionTrigger>
               <AccordionContent className="text-muted-foreground">
                 Yes, we offer free ring resizing within 60 days of purchase (up to 2 sizes). Additional resizing is available for a service fee. Some designs cannot be resized due to their construction.
@@ -86,7 +86,7 @@ const CustomerCare = () => {
 
             <AccordionItem value="care" className="border border-border rounded-lg px-6">
               <AccordionTrigger className="text-left hover:no-underline">
-                How should I care for my Mzizi Organics jewelry?
+                How should I care for my derma roller?
               </AccordionTrigger>
               <AccordionContent className="text-muted-foreground">
                 Store pieces separately in soft pouches, avoid contact with chemicals and cosmetics, and clean gently with a soft cloth. We recommend professional cleaning every 6-12 months.
@@ -95,7 +95,7 @@ const CustomerCare = () => {
 
             <AccordionItem value="authentication" className="border border-border rounded-lg px-6">
               <AccordionTrigger className="text-left hover:no-underline">
-                How can I verify the authenticity of my jewelry?
+                How can I verify my products are genuine?
               </AccordionTrigger>
               <AccordionContent className="text-muted-foreground">
                 Every Mzizi Organics piece comes with a certificate of authenticity and is hallmarked. You can verify authenticity on our website using your unique piece number or contact our customer care team.
