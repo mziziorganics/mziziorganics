@@ -1,15 +1,11 @@
-import { ArrowRight, X, Minus, Plus } from "lucide-react";
-import { useState, useEffect } from "react";
+import { ArrowRight, X } from "lucide-react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
 import ShoppingBag from "./ShoppingBag";
-import pantheonImage from "@/assets/pantheon.jpg";
-import eclipseImage from "@/assets/eclipse.jpg";
-import haloImage from "@/assets/halo.jpg";
+import { products } from "@/data/products";
 
 interface CartItem {
-  id: number;
+  id: string;
   name: string;
   price: string;
   image: string;
@@ -23,120 +19,85 @@ const Navigation = () => {
   const [offCanvasType, setOffCanvasType] = useState<'favorites' | null>(null);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isShoppingBagOpen, setIsShoppingBagOpen] = useState(false);
-  
-  // Shopping bag state with 3 mock items
-  const [cartItems, setCartItems] = useState<CartItem[]>([
-    {
-      id: 1,
-      name: "Pantheon",
-      price: "€2,850",
-      image: pantheonImage,
+
+  // Shopping bag state seeded with the full ritual
+  const [cartItems, setCartItems] = useState<CartItem[]>(
+    products.map((product) => ({
+      id: product.id,
+      name: product.name,
+      price: product.price,
+      image: product.image,
       quantity: 1,
-      category: "Earrings"
-    },
-    {
-      id: 2,
-      name: "Eclipse",
-      price: "€3,200", 
-      image: eclipseImage,
-      quantity: 1,
-      category: "Bracelets"
-    },
-    {
-      id: 3,
-      name: "Halo",
-      price: "€1,950",
-      image: haloImage, 
-      quantity: 1,
-      category: "Earrings"
-    }
-  ]);
+      category: product.category,
+    }))
+  );
 
   const totalItems = cartItems.reduce((sum, item) => sum + item.quantity, 0);
-  
-  const updateQuantity = (id: number, newQuantity: number) => {
+
+  const updateQuantity = (id: string, newQuantity: number) => {
     if (newQuantity <= 0) {
       setCartItems(items => items.filter(item => item.id !== id));
     } else {
-      setCartItems(items => 
-        items.map(item => 
+      setCartItems(items =>
+        items.map(item =>
           item.id === id ? { ...item, quantity: newQuantity } : item
         )
       );
     }
   };
-  
-  // Preload dropdown images for faster display
-  useEffect(() => {
-    const imagesToPreload = [
-      "/rings-collection.png",
-      "/earrings-collection.png", 
-      "/arcus-bracelet.png",
-      "/span-bracelet.png",
-      "/founders.png"
-    ];
-    
-    imagesToPreload.forEach(src => {
-      const img = new Image();
-      img.src = src;
-    });
-  }, []);
 
   const popularSearches = [
-    "Gold Rings",
-    "Silver Necklaces", 
-    "Pearl Earrings",
-    "Designer Bracelets",
-    "Wedding Rings",
-    "Vintage Collection"
+    "Hair growth oil",
+    "Derma roller",
+    "Rosemary scalp serum",
+    "Thinning edges",
+    "The ritual set",
   ];
-  
+
   const navItems = [
-    { 
-      name: "Shop", 
-      href: "/category/shop",
+    {
+      name: "Shop",
+      href: "/category/all-products",
       submenuItems: [
-        "Rings",
-        "Necklaces", 
-        "Earrings",
-        "Bracelets",
-        "Watches"
+        { label: "Hair Growth Oil", to: "/product/hair-growth-oil" },
+        { label: "Derma Roller", to: "/product/derma-roller" },
+        { label: "Hair Care", to: "/category/hair-care" },
+        { label: "Skin Tools", to: "/category/skin-tools" },
       ],
       images: [
-        { src: "/rings-collection.png", alt: "Rings Collection", label: "Rings" },
-        { src: "/earrings-collection.png", alt: "Earrings Collection", label: "Earrings" }
-      ]
+        { src: products[0].image, alt: "Hair Growth Oil", label: "Hair Growth Oil", to: "/product/hair-growth-oil" },
+        { src: products[1].image, alt: "Derma Roller", label: "Derma Roller", to: "/product/derma-roller" },
+      ],
     },
-    { 
-      name: "New in", 
-      href: "/category/new-in",
+    {
+      name: "The Ritual",
+      href: "/category/the-ritual",
       submenuItems: [
-        "This Week's Arrivals",
-        "Spring Collection",
-        "Featured Designers",
-        "Limited Edition",
-        "Pre-Orders"
+        { label: "Roll, then feed", to: "/about/size-guide" },
+        { label: "Why 0.5 mm", to: "/product/derma-roller" },
+        { label: "Our ingredients", to: "/about/sustainability" },
+        { label: "Results timeline", to: "/about/customer-care" },
       ],
       images: [
-        { src: "/arcus-bracelet.png", alt: "Arcus Bracelet", label: "Arcus Bracelet" },
-        { src: "/span-bracelet.png", alt: "Span Bracelet", label: "Span Bracelet" }
-      ]
+        { src: products[0].hoverImage, alt: "Applying the hair growth oil", label: "See the ritual", to: "/about/size-guide" },
+      ],
     },
-    { 
-      name: "About", 
+    {
+      name: "About",
       href: "/about/our-story",
       submenuItems: [
-        "Our Story",
-        "Sustainability",
-        "Size Guide",
-        "Customer Care",
-        "Store Locator"
+        { label: "Our Story", to: "/about/our-story" },
+        { label: "Sustainability", to: "/about/sustainability" },
+        { label: "Size Guide", to: "/about/size-guide" },
+        { label: "Customer Care", to: "/about/customer-care" },
+        { label: "Store Locator", to: "/about/store-locator" },
       ],
       images: [
-        { src: "/founders.png", alt: "Company Founders", label: "Read our story" }
-      ]
-    }
+        { src: "/founders.png", alt: "Company founders", label: "Read our story", to: "/about/our-story" },
+      ],
+    },
   ];
+
 
   return (
     <nav 
@@ -225,10 +186,11 @@ const Navigation = () => {
               <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 10.5V6a3.75 3.75 0 1 0-7.5 0v4.5m11.356-1.993 1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 0 1-1.12-1.243l1.264-12A1.125 1.125 0 0 1 5.513 7.5h12.974c.576 0 1.059.435 1.119 1.007ZM8.625 10.5a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm7.5 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" />
             </svg>
             {totalItems > 0 && (
-              <span className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-[30%] text-[0.5rem] font-semibold text-black pointer-events-none">
+              <span className="absolute -top-0.5 -right-0.5 min-w-4 h-4 px-1 flex items-center justify-center rounded-full bg-brand text-brand-foreground text-[0.55rem] font-medium pointer-events-none">
                 {totalItems}
               </span>
             )}
+
           </button>
         </div>
       </div>
@@ -245,18 +207,18 @@ const Navigation = () => {
               {/* Left side - Menu items */}
               <div className="flex-1">
                 <ul className="space-y-2">
-                   {navItems
-                     .find(item => item.name === activeDropdown)
-                     ?.submenuItems.map((subItem, index) => (
+                  {navItems
+                    .find(item => item.name === activeDropdown)
+                    ?.submenuItems.map((subItem, index) => (
                       <li key={index}>
-                        <Link 
-                          to={activeDropdown === "About" ? `/about/${subItem.toLowerCase().replace(/\s+/g, '-')}` : `/category/${subItem.toLowerCase()}`}
+                        <Link
+                          to={subItem.to}
                           className="text-nav-foreground hover:text-nav-hover transition-colors duration-200 text-sm font-light block py-2"
                         >
-                          {subItem}
+                          {subItem.label}
                         </Link>
                       </li>
-                   ))}
+                    ))}
                 </ul>
               </div>
 
@@ -264,36 +226,26 @@ const Navigation = () => {
               <div className="flex space-x-6">
                 {navItems
                   .find(item => item.name === activeDropdown)
-                  ?.images.map((image, index) => {
-                    // Determine the link destination based on dropdown and image
-                    let linkTo = "/";
-                    if (activeDropdown === "Shop") {
-                      if (image.label === "Rings") linkTo = "/category/rings";
-                      else if (image.label === "Earrings") linkTo = "/category/earrings";
-                    } else if (activeDropdown === "New in") {
-                      if (image.label === "Arcus Bracelet") linkTo = "/product/arcus-bracelet";
-                      else if (image.label === "Span Bracelet") linkTo = "/product/span-bracelet";
-                    } else if (activeDropdown === "About") {
-                      linkTo = "/about/our-story";
-                    }
-                    
-                    return (
-                      <Link key={index} to={linkTo} className="w-[400px] h-[280px] cursor-pointer group relative overflow-hidden block">
-                        <img 
-                          src={image.src}
-                          alt={image.alt}
-                          className="w-full h-full object-cover transition-opacity duration-200 group-hover:opacity-90"
-                        />
-                        {(activeDropdown === "Shop" || activeDropdown === "New in" || activeDropdown === "About") && (
-                          <div className="absolute bottom-2 left-2 text-white text-xs font-light flex items-center gap-1">
-                            <span>{image.label}</span>
-                            <ArrowRight size={12} />
-                          </div>
-                        )}
-                      </Link>
-                    );
-                  })}
+                  ?.images.map((image, index) => (
+                    <Link
+                      key={index}
+                      to={image.to}
+                      className="w-[400px] h-[280px] cursor-pointer group relative overflow-hidden block bg-brand-soft"
+                    >
+                      <img
+                        src={image.src}
+                        alt={image.alt}
+                        loading="lazy"
+                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      />
+                      <div className="absolute bottom-0 left-0 right-0 bg-brand/90 text-brand-foreground px-3 py-2 text-xs font-light flex items-center gap-1">
+                        <span>{image.label}</span>
+                        <ArrowRight size={12} />
+                      </div>
+                    </Link>
+                  ))}
               </div>
+
             </div>
           </div>
         </div>
@@ -314,7 +266,7 @@ const Navigation = () => {
                   </svg>
                   <input
                     type="text"
-                    placeholder="Search for jewelry..."
+                    placeholder="Search hair and scalp care..."
                     className="flex-1 bg-transparent text-nav-foreground placeholder:text-nav-foreground/60 outline-none text-lg"
                     autoFocus
                   />
@@ -323,17 +275,18 @@ const Navigation = () => {
 
               {/* Popular searches */}
               <div>
-                <h3 className="text-nav-foreground text-sm font-light mb-4">Popular Searches</h3>
+                <h3 className="text-brand text-xs tracking-[0.15em] uppercase mb-4">Popular Searches</h3>
                 <div className="flex flex-wrap gap-3">
                   {popularSearches.map((search, index) => (
                     <button
                       key={index}
-                      className="text-nav-foreground hover:text-nav-hover text-sm font-light py-2 px-4 border border-border rounded-full transition-colors duration-200 hover:border-nav-hover"
+                      className="text-nav-foreground hover:text-brand-foreground hover:bg-brand text-sm font-light py-2 px-4 border border-border rounded-full transition-colors duration-200 hover:border-brand"
                     >
                       {search}
                     </button>
                   ))}
                 </div>
+
               </div>
             </div>
           </div>
@@ -354,18 +307,19 @@ const Navigation = () => {
                   >
                     {item.name}
                   </Link>
-                   <div className="mt-3 pl-4 space-y-2">
+                   <div className="mt-3 pl-4 space-y-2 border-l border-brand/30">
                      {item.submenuItems.map((subItem, subIndex) => (
                        <Link
                          key={subIndex}
-                         to={item.name === "About" ? `/about/${subItem.toLowerCase().replace(/\s+/g, '-')}` : `/category/${subItem.toLowerCase()}`}
+                         to={subItem.to}
                          className="text-nav-foreground/70 hover:text-nav-hover text-sm font-light block py-1"
                          onClick={() => setIsMobileMenuOpen(false)}
                        >
-                         {subItem}
+                         {subItem.label}
                        </Link>
                      ))}
                    </div>
+
                 </div>
               ))}
             </div>

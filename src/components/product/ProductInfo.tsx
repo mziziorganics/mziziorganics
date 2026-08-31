@@ -1,21 +1,26 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { 
-  Breadcrumb, 
-  BreadcrumbItem, 
-  BreadcrumbLink, 
-  BreadcrumbList, 
-  BreadcrumbPage, 
-  BreadcrumbSeparator 
+import {
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbList,
+  BreadcrumbPage,
+  BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
 import { Minus, Plus } from "lucide-react";
+import type { Product } from "@/data/products";
 
-const ProductInfo = () => {
+interface ProductInfoProps {
+  product: Product;
+}
+
+const ProductInfo = ({ product }: ProductInfoProps) => {
   const [quantity, setQuantity] = useState(1);
 
-  const incrementQuantity = () => setQuantity(prev => prev + 1);
-  const decrementQuantity = () => setQuantity(prev => Math.max(1, prev - 1));
+  const incrementQuantity = () => setQuantity((prev) => prev + 1);
+  const decrementQuantity = () => setQuantity((prev) => Math.max(1, prev - 1));
 
   return (
     <div className="space-y-6">
@@ -31,12 +36,12 @@ const ProductInfo = () => {
             <BreadcrumbSeparator />
             <BreadcrumbItem>
               <BreadcrumbLink asChild>
-                <Link to="/category/earrings">Earrings</Link>
+                <Link to={`/category/${product.categorySlug}`}>{product.category}</Link>
               </BreadcrumbLink>
             </BreadcrumbItem>
             <BreadcrumbSeparator />
             <BreadcrumbItem>
-              <BreadcrumbPage>Pantheon</BreadcrumbPage>
+              <BreadcrumbPage>{product.name}</BreadcrumbPage>
             </BreadcrumbItem>
           </BreadcrumbList>
         </Breadcrumb>
@@ -46,11 +51,15 @@ const ProductInfo = () => {
       <div className="space-y-2">
         <div className="flex justify-between items-start">
           <div>
-            <p className="text-sm font-light text-muted-foreground mb-1">Earrings</p>
-            <h1 className="text-2xl md:text-3xl font-light text-foreground">Pantheon</h1>
+            <p className="text-xs tracking-[0.18em] uppercase text-brand mb-2">
+              {product.category}
+            </p>
+            <h1 className="text-2xl md:text-3xl font-light text-foreground">
+              {product.name}
+            </h1>
           </div>
           <div className="text-right">
-            <p className="text-xl font-light text-foreground">€2,850</p>
+            <p className="text-xl font-light text-foreground">{product.price}</p>
           </div>
         </div>
       </div>
@@ -58,23 +67,25 @@ const ProductInfo = () => {
       {/* Product details */}
       <div className="space-y-4 py-4 border-b border-border">
         <div className="space-y-2">
-          <h3 className="text-sm font-light text-foreground">Material</h3>
-          <p className="text-sm font-light text-muted-foreground">18k Gold Plated Sterling Silver</p>
+          <h3 className="text-sm font-light text-foreground">Formulated with</h3>
+          <p className="text-sm font-light text-muted-foreground">{product.material}</p>
         </div>
-        
+
         <div className="space-y-2">
-          <h3 className="text-sm font-light text-foreground">Dimensions</h3>
-          <p className="text-sm font-light text-muted-foreground">2.5cm x 1.2cm</p>
+          <h3 className="text-sm font-light text-foreground">Size</h3>
+          <p className="text-sm font-light text-muted-foreground">{product.dimensions}</p>
         </div>
-        
+
         <div className="space-y-2">
           <h3 className="text-sm font-light text-foreground">Weight</h3>
-          <p className="text-sm font-light text-muted-foreground">4.2g per earring</p>
+          <p className="text-sm font-light text-muted-foreground">{product.weight}</p>
         </div>
-        
-        <div className="space-y-2">
+
+        <div className="space-y-2 border-l-2 border-brand pl-4">
           <h3 className="text-sm font-light text-foreground">Editor's notes</h3>
-          <p className="text-sm font-light text-muted-foreground italic">"A modern interpretation of classical architecture, these earrings bridge timeless elegance with contemporary minimalism."</p>
+          <p className="text-sm font-light text-muted-foreground italic">
+            {product.editorNote}
+          </p>
         </div>
       </div>
 
@@ -87,7 +98,8 @@ const ProductInfo = () => {
               variant="ghost"
               size="sm"
               onClick={decrementQuantity}
-              className="h-10 w-10 p-0 hover:bg-transparent hover:opacity-50 rounded-none border-none"
+              aria-label="Decrease quantity"
+              className="h-10 w-10 p-0 hover:bg-transparent hover:text-brand rounded-none border-none"
             >
               <Minus className="h-4 w-4" />
             </Button>
@@ -98,16 +110,15 @@ const ProductInfo = () => {
               variant="ghost"
               size="sm"
               onClick={incrementQuantity}
-              className="h-10 w-10 p-0 hover:bg-transparent hover:opacity-50 rounded-none border-none"
+              aria-label="Increase quantity"
+              className="h-10 w-10 p-0 hover:bg-transparent hover:text-brand rounded-none border-none"
             >
               <Plus className="h-4 w-4" />
             </Button>
           </div>
         </div>
 
-        <Button 
-          className="w-full h-12 bg-foreground text-background hover:bg-foreground/90 font-light rounded-none"
-        >
+        <Button className="w-full h-12 bg-brand text-brand-foreground hover:bg-brand/90 font-light rounded-none tracking-wide">
           Add to Bag
         </Button>
       </div>

@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 
 interface CartItem {
-  id: number;
+  id: string;
   name: string;
   price: string;
   image: string;
@@ -15,7 +15,7 @@ interface ShoppingBagProps {
   isOpen: boolean;
   onClose: () => void;
   cartItems: CartItem[];
-  updateQuantity: (id: number, newQuantity: number) => void;
+  updateQuantity: (id: string, newQuantity: number) => void;
   onViewFavorites?: () => void;
 }
 
@@ -26,6 +26,7 @@ const ShoppingBag = ({ isOpen, onClose, cartItems, updateQuantity, onViewFavorit
     const price = parseFloat(item.price.replace('€', '').replace(',', ''));
     return sum + (price * item.quantity);
   }, 0);
+
 
   return (
     <div className="fixed inset-0 z-50 h-screen">
@@ -89,11 +90,12 @@ const ShoppingBag = ({ isOpen, onClose, cartItems, updateQuantity, onViewFavorit
                     <div className="flex-1">
                       <div className="flex justify-between items-start mb-2">
                         <div>
-                          <p className="text-sm font-light text-muted-foreground">{item.category}</p>
+                          <p className="text-[0.65rem] tracking-[0.15em] uppercase text-brand">{item.category}</p>
                           <h3 className="text-sm font-medium text-foreground">{item.name}</h3>
                         </div>
                         <p className="text-sm font-light text-foreground">{item.price}</p>
                       </div>
+
                       <div className="flex items-center gap-2 mt-3">
                         <div className="flex items-center border border-border">
                           <button 
@@ -124,7 +126,7 @@ const ShoppingBag = ({ isOpen, onClose, cartItems, updateQuantity, onViewFavorit
               <div className="border-t border-border pt-6 space-y-4">
                 <div className="flex justify-between items-center">
                   <span className="text-sm font-light text-foreground">Subtotal</span>
-                  <span className="text-sm font-medium text-foreground">€{subtotal.toLocaleString('en-EU', { minimumFractionDigits: 2 })}</span>
+                  <span className="text-sm font-medium text-brand">€{subtotal.toLocaleString('en-GB', { minimumFractionDigits: 2 })}</span>
                 </div>
                 
                 <p className="text-xs text-muted-foreground">
@@ -133,7 +135,7 @@ const ShoppingBag = ({ isOpen, onClose, cartItems, updateQuantity, onViewFavorit
                 
                 <Button 
                   asChild 
-                  className="w-full rounded-none" 
+                  className="w-full rounded-none bg-brand text-brand-foreground hover:bg-brand/90" 
                   size="lg"
                   onClick={onClose}
                 >
@@ -144,16 +146,17 @@ const ShoppingBag = ({ isOpen, onClose, cartItems, updateQuantity, onViewFavorit
                 
                 <Button 
                   variant="outline" 
-                  className="w-full rounded-none" 
+                  className="w-full rounded-none hover:text-brand hover:border-brand" 
                   size="lg"
                   onClick={onClose}
                   asChild
                 >
-                  <Link to="/category/shop">
+                  <Link to="/category/all-products">
                     Continue Shopping
                   </Link>
                 </Button>
               </div>
+
             </>
           )}
         </div>
