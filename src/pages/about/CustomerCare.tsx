@@ -62,7 +62,7 @@ const CustomerCare = () => {
                 What is your return and exchange policy?
               </AccordionTrigger>
               <AccordionContent className="text-muted-foreground">
-                We offer a 30-day return policy for unworn items in original condition. Custom and engraved pieces are final sale. Returns are free with our prepaid return label.
+                Unopened products can be returned within 30 days in their original condition. For hygiene reasons, opened oil bottles and used roller heads cannot be returned. Returns are free with our prepaid label.
               </AccordionContent>
             </AccordionItem>
 
@@ -80,7 +80,7 @@ const CustomerCare = () => {
                 Can I use the roller if I have a sensitive scalp?
               </AccordionTrigger>
               <AccordionContent className="text-muted-foreground">
-                Yes, we offer free ring resizing within 60 days of purchase (up to 2 sizes). Additional resizing is available for a service fee. Some designs cannot be resized due to their construction.
+                Yes — 0.5 mm is a gentle depth. Start with two passes per direction every ten days, and follow with the oil rather than an active serum. If your scalp is broken, inflamed or currently treated for a condition, speak to your dermatologist first.
               </AccordionContent>
             </AccordionItem>
 
@@ -89,7 +89,7 @@ const CustomerCare = () => {
                 How should I care for my derma roller?
               </AccordionTrigger>
               <AccordionContent className="text-muted-foreground">
-                Store pieces separately in soft pouches, avoid contact with chemicals and cosmetics, and clean gently with a soft cloth. We recommend professional cleaning every 6-12 months.
+                Rinse under hot water, then soak the head in 70% alcohol for five minutes before and after every use. Air-dry needles-up and store it in the case provided. Replace the head every three months of weekly use.
               </AccordionContent>
             </AccordionItem>
 
@@ -98,7 +98,7 @@ const CustomerCare = () => {
                 How can I verify my products are genuine?
               </AccordionTrigger>
               <AccordionContent className="text-muted-foreground">
-                Every Mzizi Organics piece comes with a certificate of authenticity and is hallmarked. You can verify authenticity on our website using your unique piece number or contact our customer care team.
+                Every bottle carries a batch number and press date on the base, and every roller ships sealed with a tamper strip. Enter your batch number on our website to see where and when it was pressed, or contact our care team.
               </AccordionContent>
             </AccordionItem>
           </Accordion>
