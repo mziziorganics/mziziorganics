@@ -13,8 +13,8 @@ const Footer = () => {
                 Organics
               </span>
             </p>
-            <p className="text-sm font-light text-brand-foreground/70 leading-relaxed max-w-md mb-8">
-              Two products. One ritual. Root-deep care made in small, cold-pressed batches.
+            <p className="text-base font-light tracking-[0.15em] text-brand-foreground/90 max-w-md mb-8">
+Own your story™
             </p>
 
             {/* Contact Information */}
@@ -60,10 +60,10 @@ const Footer = () => {
                 </li>
                 <li>
                   <Link
-                    to="/category/the-ritual"
+                    to="/category/haircare"
                     className="text-sm font-light text-brand-foreground/70 hover:text-brand-foreground transition-colors"
                   >
-                    The Ritual Set
+                    All Haircare
                   </Link>
                 </li>
               </ul>

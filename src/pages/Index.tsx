@@ -2,7 +2,6 @@ import Header from "../components/header/Header";
 import Footer from "../components/footer/Footer";
 import LargeHero from "../components/content/LargeHero";
 import FiftyFiftySection from "../components/content/FiftyFiftySection";
-import OneThirdTwoThirdsSection from "../components/content/OneThirdTwoThirdsSection";
 import EditorialSection from "../components/content/EditorialSection";
 
 const Index = () => {
@@ -13,7 +12,6 @@ const Index = () => {
       <main className="pt-6">
         <LargeHero />
         <FiftyFiftySection />
-        <OneThirdTwoThirdsSection />
         <EditorialSection />
       </main>
 
