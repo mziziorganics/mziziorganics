@@ -1,3 +1,4 @@
+import founderAmin from "@/assets/founder-amin.jpg.asset.json";
 import Header from "../../components/header/Header";
 import Footer from "../../components/footer/Footer";
 import PageHeader from "../../components/about/PageHeader";
@@ -18,15 +19,15 @@ const OurStory = () => {
         <main className="w-full lg:w-[70vw] lg:ml-auto px-6">
           <PageHeader 
             title="Our Story" 
-            subtitle="A journey of passion, craftsmanship, and timeless elegance"
+            subtitle="Own your story™"
           />
           
           <ContentSection>
             <ImageTextBlock
-              image="/founders.png"
-              imageAlt="Company founders"
-              title="Founded on Passion"
-              content="Mzizi means root. The brand was born in a small kitchen from one stubborn question: why do bathroom shelves overflow with hair products while so few of them ever reach the scalp? Our founders answered it by stripping everything back to two objects — a cold-pressed scalp oil and the tool that carries it deeper — and pressing each batch small enough that the actives are still alive when they arrive."
+              image={founderAmin.url}
+              imageAlt="Amin, founder of Mzizi Organics"
+              title="Back to the root"
+              content="Mzizi means root, and that is not decoration — it is the argument. Walk into most homes and you will find a cabinet crowded with hair oils, growth gummies, gut powders and detox teas, each one bought in hope and abandoned by week three. The industry learned that selling more is easier than solving anything. I started Mzizi Organics to reverse that trade: to go back to the organic ways that worked long before the marketing did, and to give people the few things that actually deliver. So we make two products instead of twenty — cold-pressed in small batches, no fillers to bulk out the bottle, no fragrance to hide a thin formula — and we stand behind them. Fewer products, honestly made, used consistently. That is how roots recover, and that is how you own your story."
               imagePosition="left"
             />
           </ContentSection>
