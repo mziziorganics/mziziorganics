@@ -11,7 +11,7 @@ const EditorialSection = () => {
             Our Story
           </p>
           <h2 className="text-2xl md:text-3xl font-normal text-foreground leading-tight">
-            Mzizi means root. That is the whole idea.
+            Mzizi means root in Swahili. That is the whole idea.
           </h2>
           <p className="text-sm font-light text-foreground leading-relaxed">
             Look inside most bathroom cabinets and you will find the same story: eight
