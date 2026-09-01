@@ -27,7 +27,7 @@ interface FilterSortBarProps {
 const FilterSortBar = ({ filtersOpen, setFiltersOpen, itemCount }: FilterSortBarProps) => {
   const [sortBy, setSortBy] = useState("featured");
 
-  const categories = ["Hair Care", "Skin Tools"];
+  const categories = ["Haircare"];
   const priceRanges = ["Under €40", "€40 - €60"];
   const concerns = ["Hair growth", "Thinning edges", "Scalp health", "Absorption"];
 

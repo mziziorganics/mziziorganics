@@ -40,8 +40,8 @@ export const products: Product[] = [
   {
     id: "hair-growth-oil",
     name: "Hair Growth Oil",
-    category: "Hair Care",
-    categorySlug: "hair-care",
+    category: "Haircare",
+    categorySlug: "haircare",
     price: "€48",
     priceValue: 48,
     image: hairOil,
@@ -91,8 +91,8 @@ export const products: Product[] = [
   {
     id: "derma-roller",
     name: "Derma Roller",
-    category: "Skin Tools",
-    categorySlug: "skin-tools",
+    category: "Haircare",
+    categorySlug: "haircare",
     price: "€36",
     priceValue: 36,
     image: dermaRoller,

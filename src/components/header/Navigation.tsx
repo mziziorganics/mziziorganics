@@ -3,6 +3,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import ShoppingBag from "./ShoppingBag";
 import { products } from "@/data/products";
+import founderAmin from "@/assets/founder-amin.jpg.asset.json";
 
 interface CartItem {
   id: string;
@@ -58,11 +59,15 @@ const Navigation = () => {
     {
       name: "Shop",
       href: "/category/all-products",
-      submenuItems: [
-        { label: "Hair Growth Oil", to: "/product/hair-growth-oil" },
-        { label: "Derma Roller", to: "/product/derma-roller" },
-        { label: "Hair Care", to: "/category/hair-care" },
-        { label: "Skin Tools", to: "/category/skin-tools" },
+      groups: [
+        {
+          heading: "Haircare",
+          items: [
+            { label: "Hair Growth Oil", to: "/product/hair-growth-oil" },
+            { label: "Derma Roller", to: "/product/derma-roller" },
+            { label: "Shop all haircare", to: "/category/haircare" },
+          ],
+        },
       ],
       images: [
         { src: products[0].image, alt: "Hair Growth Oil", label: "Hair Growth Oil", to: "/product/hair-growth-oil" },
@@ -70,30 +75,22 @@ const Navigation = () => {
       ],
     },
     {
-      name: "The Ritual",
-      href: "/category/the-ritual",
-      submenuItems: [
-        { label: "Roll, then feed", to: "/about/size-guide" },
-        { label: "Why 0.5 mm", to: "/product/derma-roller" },
-        { label: "Our ingredients", to: "/about/sustainability" },
-        { label: "Results timeline", to: "/about/customer-care" },
-      ],
-      images: [
-        { src: products[0].hoverImage, alt: "Applying the hair growth oil", label: "See the ritual", to: "/about/size-guide" },
-      ],
-    },
-    {
       name: "About",
       href: "/about/our-story",
-      submenuItems: [
-        { label: "Our Story", to: "/about/our-story" },
-        { label: "Sustainability", to: "/about/sustainability" },
-        { label: "Size Guide", to: "/about/size-guide" },
-        { label: "Customer Care", to: "/about/customer-care" },
-        { label: "Store Locator", to: "/about/store-locator" },
+      groups: [
+        {
+          heading: "The Brand",
+          items: [
+            { label: "Our Story", to: "/about/our-story" },
+            { label: "Sustainability", to: "/about/sustainability" },
+            { label: "How to Use", to: "/about/size-guide" },
+            { label: "Customer Care", to: "/about/customer-care" },
+            { label: "Store Locator", to: "/about/store-locator" },
+          ],
+        },
       ],
       images: [
-        { src: "/founders.png", alt: "Company founders", label: "Read our story", to: "/about/our-story" },
+        { src: founderAmin.url, alt: "Amin, founder of Mzizi Organics", label: "Read our story", to: "/about/our-story" },
       ],
     },
   ];
@@ -205,21 +202,35 @@ const Navigation = () => {
           <div className="px-6 py-8">
             <div className="flex justify-between w-full">
               {/* Left side - Menu items */}
-              <div className="flex-1">
-                <ul className="space-y-2">
-                  {navItems
-                    .find(item => item.name === activeDropdown)
-                    ?.submenuItems.map((subItem, index) => (
-                      <li key={index}>
-                        <Link
-                          to={subItem.to}
-                          className="text-nav-foreground hover:text-nav-hover transition-colors duration-200 text-sm font-light block py-2"
-                        >
-                          {subItem.label}
-                        </Link>
-                      </li>
-                    ))}
-                </ul>
+              <div className="flex-1 flex gap-16">
+                {navItems
+                  .find(item => item.name === activeDropdown)
+                  ?.groups.map((group) => (
+                    <div key={group.heading}>
+                      <p className="text-[0.6rem] tracking-[0.3em] uppercase text-brand mb-4">
+                        {group.heading}
+                      </p>
+                      <span className="block w-8 h-px bg-brand/40 mb-4" />
+                      <ul className="space-y-2">
+                        {group.items.map((subItem) => (
+                          <li key={subItem.to}>
+                            <Link
+                              to={subItem.to}
+                              className="group inline-flex items-center gap-2 text-nav-foreground hover:text-brand transition-colors duration-200 text-sm font-light py-1"
+                            >
+                              <span className="border-b border-transparent group-hover:border-brand/50 pb-0.5">
+                                {subItem.label}
+                              </span>
+                              <ArrowRight
+                                size={12}
+                                className="opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-200"
+                              />
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  ))}
               </div>
 
               {/* Right side - Images */}
@@ -307,16 +318,25 @@ const Navigation = () => {
                   >
                     {item.name}
                   </Link>
-                   <div className="mt-3 pl-4 space-y-2 border-l border-brand/30">
-                     {item.submenuItems.map((subItem, subIndex) => (
-                       <Link
-                         key={subIndex}
-                         to={subItem.to}
-                         className="text-nav-foreground/70 hover:text-nav-hover text-sm font-light block py-1"
-                         onClick={() => setIsMobileMenuOpen(false)}
-                       >
-                         {subItem.label}
-                       </Link>
+                   <div className="mt-3 pl-4 space-y-4 border-l border-brand/30">
+                     {item.groups.map((group) => (
+                       <div key={group.heading}>
+                         <p className="text-[0.6rem] tracking-[0.3em] uppercase text-brand mb-2">
+                           {group.heading}
+                         </p>
+                         <div className="space-y-2">
+                           {group.items.map((subItem) => (
+                             <Link
+                               key={subItem.to}
+                               to={subItem.to}
+                               className="text-nav-foreground/70 hover:text-brand text-sm font-light block py-1"
+                               onClick={() => setIsMobileMenuOpen(false)}
+                             >
+                               {subItem.label}
+                             </Link>
+                           ))}
+                         </div>
+                       </div>
                      ))}
                    </div>
 

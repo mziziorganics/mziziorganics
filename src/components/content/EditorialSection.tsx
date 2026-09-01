@@ -1,4 +1,4 @@
-import founders from "@/assets/founders.png";
+import founderAmin from "@/assets/founder-amin.jpg.asset.json";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 
@@ -11,14 +11,22 @@ const EditorialSection = () => {
             Our Story
           </p>
           <h2 className="text-2xl md:text-3xl font-normal text-foreground leading-tight">
-            Care That Starts at the Root
+            Mzizi means root. That is the whole idea.
           </h2>
           <p className="text-sm font-light text-foreground leading-relaxed">
-            Mzizi means root. Mzizi Organics began in a small kitchen with a single
-            question: why do shelves overflow with hair products while so few of them
-            reach the scalp? We answered it by cutting everything back to two objects —
-            a cold-pressed oil and the tool that carries it deeper — and pressing each
-            batch small enough that the actives are still alive when they arrive.
+            Look inside most bathroom cabinets and you will find the same story: eight
+            bottles, four powders, three promises — and hair or a gut that is no better
+            than it was a year ago. We have been sold volume instead of results.
+          </p>
+          <p className="text-sm font-light text-foreground leading-relaxed">
+            I started Mzizi Organics to go back to the root, because the organic way has
+            always worked — it was simply never as profitable as selling more. So we make
+            fewer things and we make them properly: cold-pressed, small-batch, nothing
+            added to pad the label. Two products, used honestly, doing what a shelf of ten
+            never did.
+          </p>
+          <p className="text-sm font-light text-brand leading-relaxed">
+            Fewer products. Real roots. Own your story™.
           </p>
           <Link
             to="/about/our-story"
@@ -32,8 +40,8 @@ const EditorialSection = () => {
         <div className="order-first md:order-last">
           <div className="w-full aspect-square overflow-hidden bg-brand-soft">
             <img
-              src={founders}
-              alt="The founders of Mzizi Organics"
+              src={founderAmin.url}
+              alt="Amin, founder of Mzizi Organics"
               loading="lazy"
               className="w-full h-full object-cover"
             />
