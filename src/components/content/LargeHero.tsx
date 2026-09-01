@@ -16,7 +16,7 @@ const LargeHero = () => {
         <div className="absolute inset-0 bg-gradient-to-t from-brand/80 via-brand/20 to-transparent" />
         <div className="absolute bottom-0 left-0 right-0 p-6 md:p-12 text-brand-foreground">
           <p className="text-[0.65rem] tracking-[0.3em] uppercase mb-3 text-brand-foreground/80">
-            The Root Ritual
+            Own your story™
           </p>
           <h1 className="text-3xl md:text-5xl font-light leading-tight max-w-2xl">
             Roll it open. Feed it deep.
