@@ -85,7 +85,6 @@ const Navigation = () => {
             { label: "Sustainability", to: "/about/sustainability" },
             { label: "How to Use", to: "/about/size-guide" },
             { label: "Customer Care", to: "/about/customer-care" },
-            { label: "Store Locator", to: "/about/store-locator" },
           ],
         },
       ],
