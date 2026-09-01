@@ -23,14 +23,13 @@ Own your story™
                 <p className="font-normal text-brand-foreground mb-1 tracking-[0.15em] uppercase text-xs">
                   Visit Us
                 </p>
-                <p>123 Madison Avenue</p>
-                <p>New York, NY 10016</p>
+                <p>Nairobi, Kenya</p>
               </div>
               <div>
                 <p className="font-normal text-brand-foreground mb-1 mt-4 tracking-[0.15em] uppercase text-xs">
                   Contact
                 </p>
-                <p>+1 (212) 555-0123</p>
+                <p>07 95 28 40 28</p>
                 <p>hello@mziziorganics.com</p>
               </div>
             </div>
@@ -97,14 +96,6 @@ Own your story™
                     Sustainability
                   </Link>
                 </li>
-                <li>
-                  <Link
-                    to="/about/store-locator"
-                    className="text-sm font-light text-brand-foreground/70 hover:text-brand-foreground transition-colors"
-                  >
-                    Stockists
-                  </Link>
-                </li>
               </ul>
             </div>
 
@@ -114,7 +105,9 @@ Own your story™
               <ul className="space-y-2">
                 <li>
                   <a
-                    href="#"
+                    href="https://www.instagram.com/mzizi.organics?igsi=bDVyeGd2Mmd3NzRo"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="text-sm font-light text-brand-foreground/70 hover:text-brand-foreground transition-colors"
                   >
                     Instagram
@@ -122,18 +115,12 @@ Own your story™
                 </li>
                 <li>
                   <a
-                    href="#"
+                    href="https://www.tiktok.com/@mzizi.organics?_r=1&_t=ZS-99MYAHFczSi"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="text-sm font-light text-brand-foreground/70 hover:text-brand-foreground transition-colors"
                   >
-                    Pinterest
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="text-sm font-light text-brand-foreground/70 hover:text-brand-foreground transition-colors"
-                  >
-                    Newsletter
+                    TikTok
                   </a>
                 </li>
               </ul>

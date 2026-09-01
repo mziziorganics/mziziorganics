@@ -137,8 +137,8 @@ const TermsOfService = () => {
               </p>
               <div className="mt-4 text-muted-foreground">
                 <p>Email: legal@mziziorganics.com</p>
-                <p>Phone: +1 (212) 555-0123</p>
-                <p>Address: 123 Madison Avenue, New York, NY 10016</p>
+                <p>Phone: 07 95 28 40 28</p>
+                <p>Address: Nairobi, Kenya</p>
               </div>
             </section>
           </div>
