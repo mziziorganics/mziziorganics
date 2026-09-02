@@ -383,10 +383,46 @@ const Navigation = () => {
             </div>
             
             {/* Content */}
-            <div className="p-6">
-              <p className="text-muted-foreground text-sm mb-6">
-                You haven't added any favorites yet. Browse our collection and click the heart icon to save items you love.
-              </p>
+            <div className="p-6 overflow-y-auto">
+              {favoriteProducts.length === 0 ? (
+                <p className="text-muted-foreground text-sm mb-6">
+                  You haven't added any favorites yet. Browse our collection and click the heart icon to save items you love.
+                </p>
+              ) : (
+                <ul className="space-y-6">
+                  {favoriteProducts.map((product) => (
+                    <li key={product.id} className="flex gap-4">
+                      <Link
+                        to={`/product/${product.id}`}
+                        onClick={() => setOffCanvasType(null)}
+                        className="w-20 h-20 shrink-0 bg-brand-soft overflow-hidden"
+                      >
+                        <img src={product.image} alt={product.name} className="w-full h-full object-cover" />
+                      </Link>
+                      <div className="flex-1 min-w-0">
+                        <p className="text-[0.6rem] tracking-[0.2em] uppercase text-brand mb-1">
+                          {product.category}
+                        </p>
+                        <Link
+                          to={`/product/${product.id}`}
+                          onClick={() => setOffCanvasType(null)}
+                          className="text-sm font-light text-foreground hover:text-brand transition-colors block"
+                        >
+                          {product.name}
+                        </Link>
+                        <p className="text-sm font-light text-muted-foreground mt-1">{product.price}</p>
+                      </div>
+                      <button
+                        onClick={() => removeFavorite(product.id)}
+                        aria-label={`Remove ${product.name} from favorites`}
+                        className="p-1 text-brand hover:text-muted-foreground transition-colors self-start"
+                      >
+                        <Heart size={16} strokeWidth={1.5} className="fill-brand" />
+                      </button>
+                    </li>
+                  ))}
+                </ul>
+              )}
             </div>
           </div>
         </div>
