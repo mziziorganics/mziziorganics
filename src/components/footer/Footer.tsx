@@ -30,7 +30,7 @@ Own your story™
                   Contact
                 </p>
                 <p>07 95 28 40 28</p>
-                <p>hello@mziziorganics.com</p>
+                <p>mziziorganics@gmail.com</p>
               </div>
             </div>
           </div>

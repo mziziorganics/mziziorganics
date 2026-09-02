@@ -121,7 +121,7 @@ const PrivacyPolicy = () => {
                 If you have any questions about this Privacy Policy or our privacy practices, please contact us at:
               </p>
               <div className="mt-4 text-muted-foreground">
-                <p>Email: privacy@mziziorganics.com</p>
+                <p>Email: mziziorganics@gmail.com</p>
                 <p>Phone: 07 95 28 40 28</p>
                 <p>Address: Nairobi, Kenya</p>
               </div>
