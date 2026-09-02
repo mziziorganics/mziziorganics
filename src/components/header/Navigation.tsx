@@ -1,8 +1,9 @@
-import { ArrowRight, X } from "lucide-react";
+import { ArrowRight, X, Heart } from "lucide-react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import ShoppingBag from "./ShoppingBag";
 import { products } from "@/data/products";
+import { useFavorites } from "@/hooks/useFavorites";
 import founderAmin from "@/assets/founder-amin.jpg.asset.json";
 
 interface CartItem {
@@ -20,6 +21,8 @@ const Navigation = () => {
   const [offCanvasType, setOffCanvasType] = useState<'favorites' | null>(null);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isShoppingBagOpen, setIsShoppingBagOpen] = useState(false);
+  const { favorites, removeFavorite } = useFavorites();
+  const favoriteProducts = products.filter((p) => favorites.includes(p.id));
 
   // Shopping bag state seeded with the full ritual
   const [cartItems, setCartItems] = useState<CartItem[]>(
@@ -165,13 +168,16 @@ const Navigation = () => {
             </svg>
           </button>
           <button 
-            className="hidden lg:block p-2 text-nav-foreground hover:text-nav-hover transition-colors duration-200"
+            className="hidden lg:block p-2 text-nav-foreground hover:text-nav-hover transition-colors duration-200 relative"
             aria-label="Favorites"
             onClick={() => setOffCanvasType('favorites')}
           >
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-5 h-5">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
-            </svg>
+            <Heart size={20} strokeWidth={1.5} className={favorites.length > 0 ? "fill-brand text-brand" : "fill-transparent"} />
+            {favorites.length > 0 && (
+              <span className="absolute -top-0.5 -right-0.5 min-w-4 h-4 px-1 flex items-center justify-center rounded-full bg-brand text-brand-foreground text-[0.55rem] font-medium pointer-events-none">
+                {favorites.length}
+              </span>
+            )}
           </button>
           <button 
             className="p-2 text-nav-foreground hover:text-nav-hover transition-colors duration-200 relative"
@@ -382,10 +388,46 @@ const Navigation = () => {
             </div>
             
             {/* Content */}
-            <div className="p-6">
-              <p className="text-muted-foreground text-sm mb-6">
-                You haven't added any favorites yet. Browse our collection and click the heart icon to save items you love.
-              </p>
+            <div className="p-6 overflow-y-auto">
+              {favoriteProducts.length === 0 ? (
+                <p className="text-muted-foreground text-sm mb-6">
+                  You haven't added any favorites yet. Browse our collection and click the heart icon to save items you love.
+                </p>
+              ) : (
+                <ul className="space-y-6">
+                  {favoriteProducts.map((product) => (
+                    <li key={product.id} className="flex gap-4">
+                      <Link
+                        to={`/product/${product.id}`}
+                        onClick={() => setOffCanvasType(null)}
+                        className="w-20 h-20 shrink-0 bg-brand-soft overflow-hidden"
+                      >
+                        <img src={product.image} alt={product.name} className="w-full h-full object-cover" />
+                      </Link>
+                      <div className="flex-1 min-w-0">
+                        <p className="text-[0.6rem] tracking-[0.2em] uppercase text-brand mb-1">
+                          {product.category}
+                        </p>
+                        <Link
+                          to={`/product/${product.id}`}
+                          onClick={() => setOffCanvasType(null)}
+                          className="text-sm font-light text-foreground hover:text-brand transition-colors block"
+                        >
+                          {product.name}
+                        </Link>
+                        <p className="text-sm font-light text-muted-foreground mt-1">{product.price}</p>
+                      </div>
+                      <button
+                        onClick={() => removeFavorite(product.id)}
+                        aria-label={`Remove ${product.name} from favorites`}
+                        className="p-1 text-brand hover:text-muted-foreground transition-colors self-start"
+                      >
+                        <Heart size={16} strokeWidth={1.5} className="fill-brand" />
+                      </button>
+                    </li>
+                  ))}
+                </ul>
+              )}
             </div>
           </div>
         </div>
