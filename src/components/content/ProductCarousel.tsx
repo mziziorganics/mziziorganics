@@ -1,6 +1,8 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Link } from "react-router-dom";
+import { Heart } from "lucide-react";
 import { products } from "@/data/products";
+import { useFavorites } from "@/hooks/useFavorites";
 
 interface ProductCarouselProps {
   excludeId?: string;
@@ -8,6 +10,7 @@ interface ProductCarouselProps {
 
 const ProductCarousel = ({ excludeId }: ProductCarouselProps) => {
   const visible = products.filter((product) => product.id !== excludeId);
+  const { isFavorite, toggleFavorite } = useFavorites();
 
   return (
     <section className="w-full mb-16 px-6">
@@ -42,6 +45,27 @@ const ProductCarousel = ({ excludeId }: ProductCarouselProps) => {
                       New
                     </div>
                   )}
+                  <button
+                    type="button"
+                    aria-label={
+                      isFavorite(product.id)
+                        ? `Remove ${product.name} from favorites`
+                        : `Add ${product.name} to favorites`
+                    }
+                    aria-pressed={isFavorite(product.id)}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      e.stopPropagation();
+                      toggleFavorite(product.id);
+                    }}
+                    className="absolute top-3 right-3 p-2 rounded-full bg-background/80 backdrop-blur-sm border border-border/60 text-foreground hover:text-brand hover:border-brand/50 transition-colors duration-200"
+                  >
+                    <Heart
+                      size={16}
+                      strokeWidth={1.5}
+                      className={isFavorite(product.id) ? "fill-brand text-brand" : "fill-transparent"}
+                    />
+                  </button>
                 </div>
                 <div className="space-y-1">
                   <p className="text-xs tracking-[0.18em] uppercase text-brand">
