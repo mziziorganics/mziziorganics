@@ -9,7 +9,8 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
-import { Minus, Plus } from "lucide-react";
+import { Minus, Plus, Heart } from "lucide-react";
+import { useFavorites } from "@/hooks/useFavorites";
 import type { Product } from "@/data/products";
 
 interface ProductInfoProps {
@@ -18,6 +19,8 @@ interface ProductInfoProps {
 
 const ProductInfo = ({ product }: ProductInfoProps) => {
   const [quantity, setQuantity] = useState(1);
+  const { isFavorite, toggleFavorite } = useFavorites();
+  const favorited = isFavorite(product.id);
 
   const incrementQuantity = () => setQuantity((prev) => prev + 1);
   const decrementQuantity = () => setQuantity((prev) => Math.max(1, prev - 1));
@@ -118,9 +121,20 @@ const ProductInfo = ({ product }: ProductInfoProps) => {
           </div>
         </div>
 
-        <Button className="w-full h-12 bg-brand text-brand-foreground hover:bg-brand/90 font-light rounded-none tracking-wide">
-          Add to Bag
-        </Button>
+        <div className="flex gap-3">
+          <Button className="flex-1 h-12 bg-brand text-brand-foreground hover:bg-brand/90 font-light rounded-none tracking-wide">
+            Add to Bag
+          </Button>
+          <button
+            type="button"
+            onClick={() => toggleFavorite(product.id)}
+            aria-pressed={favorited}
+            aria-label={favorited ? "Remove from favorites" : "Add to favorites"}
+            className="h-12 w-12 flex items-center justify-center border border-border text-foreground hover:text-brand hover:border-brand transition-colors"
+          >
+            <Heart size={18} strokeWidth={1.5} className={favorited ? "fill-brand text-brand" : "fill-transparent"} />
+          </button>
+        </div>
       </div>
     </div>
   );
