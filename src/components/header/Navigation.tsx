@@ -21,6 +21,8 @@ const Navigation = () => {
   const [offCanvasType, setOffCanvasType] = useState<'favorites' | null>(null);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isShoppingBagOpen, setIsShoppingBagOpen] = useState(false);
+  const { favorites, removeFavorite } = useFavorites();
+  const favoriteProducts = products.filter((p) => favorites.includes(p.id));
 
   // Shopping bag state seeded with the full ritual
   const [cartItems, setCartItems] = useState<CartItem[]>(
