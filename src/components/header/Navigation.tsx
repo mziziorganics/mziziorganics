@@ -1,8 +1,9 @@
-import { ArrowRight, X } from "lucide-react";
+import { ArrowRight, X, Heart } from "lucide-react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import ShoppingBag from "./ShoppingBag";
 import { products } from "@/data/products";
+import { useFavorites } from "@/hooks/useFavorites";
 import founderAmin from "@/assets/founder-amin.jpg.asset.json";
 
 interface CartItem {
