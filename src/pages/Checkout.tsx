@@ -72,16 +72,16 @@ const Checkout = () => {
 
 
   const subtotal = cartItems.reduce((sum, item) => {
-    const price = parseFloat(item.price.replace('€', '').replace(',', ''));
+    const price = parseFloat(item.price.replace(/[^0-9.]/g, ''));
     return sum + (price * item.quantity);
   }, 0);
 
   const getShippingCost = () => {
     switch (shippingOption) {
       case "express":
-        return 15;
+        return 350;
       case "overnight":
-        return 35;
+        return 800;
       default:
         return 0; // Standard shipping is free
     }
@@ -214,7 +214,7 @@ const Checkout = () => {
                 <div className="border-t border-muted-foreground/20 mt-4 pt-6">
                   <div className="flex justify-between text-sm">
                     <span className="text-muted-foreground">Subtotal</span>
-                    <span className="text-foreground">€{subtotal.toLocaleString()}</span>
+                    <span className="text-foreground">KSh {subtotal.toLocaleString()}</span>
                   </div>
                 </div>
               </div>
@@ -518,7 +518,7 @@ const Checkout = () => {
                     </Label>
                   </div>
                   <div className="text-sm text-muted-foreground">
-                    €15 • 1-2 business days
+                    KSh 350 • 1-2 business days
                   </div>
                 </div>
 
@@ -530,7 +530,7 @@ const Checkout = () => {
                     </Label>
                   </div>
                   <div className="text-sm text-muted-foreground">
-                    €35 • Next business day
+                    KSh 800 • Next business day
                   </div>
                 </div>
               </RadioGroup>
@@ -624,17 +624,17 @@ const Checkout = () => {
                   <div className="bg-muted/10 p-6 rounded-none border border-muted-foreground/20 space-y-3">
                     <div className="flex justify-between text-sm">
                       <span className="text-muted-foreground">Subtotal</span>
-                      <span className="text-foreground">€{subtotal.toLocaleString()}</span>
+                      <span className="text-foreground">KSh {subtotal.toLocaleString()}</span>
                     </div>
                     <div className="flex justify-between text-sm">
                       <span className="text-muted-foreground">Shipping</span>
                       <span className="text-foreground">
-                        {shipping === 0 ? "Free" : `€${shipping}`}
+                        {shipping === 0 ? "Free" : `KSh ${shipping}`}
                       </span>
                     </div>
                     <div className="flex justify-between text-lg font-medium border-t border-muted-foreground/20 pt-3">
                       <span className="text-foreground">Total</span>
-                      <span className="text-brand">€{total.toLocaleString()}</span>
+                      <span className="text-brand">KSh {total.toLocaleString()}</span>
                     </div>
                   </div>
 
@@ -643,7 +643,7 @@ const Checkout = () => {
                     disabled={isProcessing || !paymentDetails.cardNumber || !paymentDetails.expiryDate || !paymentDetails.cvv || !paymentDetails.cardholderName}
                     className="w-full rounded-none h-12 text-base"
                   >
-                    {isProcessing ? "Processing..." : `Complete Order • €${total.toLocaleString()}`}
+                    {isProcessing ? "Processing..." : `Complete Order • KSh ${total.toLocaleString()}`}
                   </Button>
                 </div>
               ) : (

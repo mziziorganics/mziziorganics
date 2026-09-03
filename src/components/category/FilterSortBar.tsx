@@ -28,7 +28,7 @@ const FilterSortBar = ({ filtersOpen, setFiltersOpen, itemCount }: FilterSortBar
   const [sortBy, setSortBy] = useState("featured");
 
   const categories = ["Haircare"];
-  const priceRanges = ["Under €40", "€40 - €60"];
+  const priceRanges = ["Under KSh 2,000", "KSh 2,000 - KSh 3,000"];
   const concerns = ["Hair growth", "Thinning edges", "Scalp health", "Absorption"];
 
   const filterGroups = [

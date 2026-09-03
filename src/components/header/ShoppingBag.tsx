@@ -23,7 +23,7 @@ const ShoppingBag = ({ isOpen, onClose, cartItems, updateQuantity, onViewFavorit
   if (!isOpen) return null;
 
   const subtotal = cartItems.reduce((sum, item) => {
-    const price = parseFloat(item.price.replace('€', '').replace(',', ''));
+    const price = parseFloat(item.price.replace(/[^0-9.]/g, ''));
     return sum + (price * item.quantity);
   }, 0);
 
@@ -126,7 +126,7 @@ const ShoppingBag = ({ isOpen, onClose, cartItems, updateQuantity, onViewFavorit
               <div className="border-t border-border pt-6 space-y-4">
                 <div className="flex justify-between items-center">
                   <span className="text-sm font-light text-foreground">Subtotal</span>
-                  <span className="text-sm font-medium text-brand">€{subtotal.toLocaleString('en-GB', { minimumFractionDigits: 2 })}</span>
+                  <span className="text-sm font-medium text-brand">KSh {subtotal.toLocaleString('en-KE')}</span>
                 </div>
                 
                 <p className="text-xs text-muted-foreground">
