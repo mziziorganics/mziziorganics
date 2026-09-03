@@ -1,5 +1,4 @@
 import hairOil from "@/assets/hair-growth-oil.jpg";
-import hairOilAlt from "@/assets/hair-growth-oil-alt.jpg";
 import dermaRoller from "@/assets/derma-roller.jpg";
 import dermaRollerAlt from "@/assets/derma-roller-alt.jpg";
 
@@ -42,11 +41,11 @@ export const products: Product[] = [
     name: "Hair Growth Oil",
     category: "Haircare",
     categorySlug: "haircare",
-    price: "€48",
-    priceValue: 48,
+    price: "KSh 2,500",
+    priceValue: 2500,
     image: hairOil,
-    hoverImage: hairOilAlt,
-    images: [hairOil, hairOilAlt],
+    hoverImage: hairOil,
+    images: [hairOil],
     isNew: true,
     material: "Rosemary, Castor & Amla in Cold-Pressed Jojoba",
     dimensions: "30 ml / 1 fl oz amber glass",
@@ -70,31 +69,15 @@ export const products: Product[] = [
       "• Store away from direct sunlight to protect the actives",
     ],
     rating: 4.9,
-    reviews: [
-      {
-        name: "Amara K.",
-        rating: 5,
-        body: '"Six weeks in and my edges are visibly filling back in. It absorbs completely — no pillow stains, no heaviness."',
-      },
-      {
-        name: "Nadia S.",
-        rating: 5,
-        body: '"The rosemary scent is real, not perfumed. My scalp stopped flaking within two weeks of switching."',
-      },
-      {
-        name: "Priya R.",
-        rating: 4,
-        body: '"Beautiful dropper and it lasts a long time. I wish the bottle were bigger, which says everything."',
-      },
-    ],
+    reviews: [],
   },
   {
     id: "derma-roller",
     name: "Derma Roller",
     category: "Haircare",
     categorySlug: "haircare",
-    price: "€36",
-    priceValue: 36,
+    price: "KSh 1,800",
+    priceValue: 1800,
     image: dermaRoller,
     hoverImage: dermaRollerAlt,
     images: [dermaRoller, dermaRollerAlt],
@@ -120,23 +103,7 @@ export const products: Product[] = [
       "• Replace the head every three months of weekly use",
     ],
     rating: 4.8,
-    reviews: [
-      {
-        name: "Zainab M.",
-        rating: 5,
-        body: '"Paired with the oil it is a completely different result. My hairline responded within a month."',
-      },
-      {
-        name: "Elise T.",
-        rating: 5,
-        body: '"The needles are genuinely smooth — no drag, no scratching. The handle feels premium in the hand."',
-      },
-      {
-        name: "Hana B.",
-        rating: 4,
-        body: '"Clear instructions and a proper storage case. Start slow if you are new to microneedling."',
-      },
-    ],
+    reviews: [],
   },
 ];
 
@@ -144,4 +111,4 @@ export const getProduct = (id?: string): Product =>
   products.find((product) => product.id === id) ?? products[0];
 
 export const formatPrice = (value: number) =>
-  `€${value.toLocaleString("en-GB")}`;
+  `KSh ${value.toLocaleString("en-KE")}`;
