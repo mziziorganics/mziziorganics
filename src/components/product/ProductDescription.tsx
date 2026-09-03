@@ -36,7 +36,7 @@ const ProductDescription = ({ product }: ProductDescriptionProps) => {
         <Button
           variant="ghost"
           onClick={() => setIsDescriptionOpen(!isDescriptionOpen)}
-          className="w-full h-14 px-0 justify-between hover:bg-transparent hover:text-brand font-light rounded-none"
+          className="w-full h-14 px-0 justify-between hover:bg-transparent hover:text-brand font-light rounded-none transition-colors duration-300 press"
         >
           <span>Description</span>
           {isDescriptionOpen ? (
@@ -46,7 +46,7 @@ const ProductDescription = ({ product }: ProductDescriptionProps) => {
           )}
         </Button>
         {isDescriptionOpen && (
-          <div className="pb-6 space-y-4">
+          <div className="pb-6 space-y-4 animate-fade-up">
             {product.description.map((paragraph, index) => (
               <p
                 key={index}
@@ -64,7 +64,7 @@ const ProductDescription = ({ product }: ProductDescriptionProps) => {
         <Button
           variant="ghost"
           onClick={() => setIsDetailsOpen(!isDetailsOpen)}
-          className="w-full h-14 px-0 justify-between hover:bg-transparent hover:text-brand font-light rounded-none"
+          className="w-full h-14 px-0 justify-between hover:bg-transparent hover:text-brand font-light rounded-none transition-colors duration-300 press"
         >
           <span>Product Details</span>
           {isDetailsOpen ? (
@@ -74,7 +74,7 @@ const ProductDescription = ({ product }: ProductDescriptionProps) => {
           )}
         </Button>
         {isDetailsOpen && (
-          <div className="pb-6 space-y-3">
+          <div className="pb-6 space-y-3 animate-fade-up">
             {product.details.map((detail) => (
               <div key={detail.label} className="flex justify-between">
                 <span className="text-sm font-light text-muted-foreground">
@@ -92,7 +92,7 @@ const ProductDescription = ({ product }: ProductDescriptionProps) => {
         <Button
           variant="ghost"
           onClick={() => setIsCareOpen(!isCareOpen)}
-          className="w-full h-14 px-0 justify-between hover:bg-transparent hover:text-brand font-light rounded-none"
+          className="w-full h-14 px-0 justify-between hover:bg-transparent hover:text-brand font-light rounded-none transition-colors duration-300 press"
         >
           <span>How to Use &amp; Care</span>
           {isCareOpen ? (
@@ -102,7 +102,7 @@ const ProductDescription = ({ product }: ProductDescriptionProps) => {
           )}
         </Button>
         {isCareOpen && (
-          <div className="pb-6 space-y-4">
+          <div className="pb-6 space-y-4 animate-fade-up">
             <ul className="space-y-2">
               {product.care.map((step, index) => (
                 <li key={index} className="text-sm font-light text-muted-foreground">
@@ -122,7 +122,7 @@ const ProductDescription = ({ product }: ProductDescriptionProps) => {
         <Button
           variant="ghost"
           onClick={() => setIsReviewsOpen(!isReviewsOpen)}
-          className="w-full h-14 px-0 justify-between hover:bg-transparent hover:text-brand font-light rounded-none"
+          className="w-full h-14 px-0 justify-between hover:bg-transparent hover:text-brand font-light rounded-none transition-colors duration-300 press"
         >
           <div className="flex items-center gap-3">
             <span>Customer Reviews</span>
@@ -142,7 +142,7 @@ const ProductDescription = ({ product }: ProductDescriptionProps) => {
           )}
         </Button>
         {isReviewsOpen && (
-          <div className="pb-6 space-y-6">
+          <div className="pb-6 space-y-6 animate-fade-up">
             <ReviewProduct />
 
             <div className="space-y-6">
