@@ -83,7 +83,8 @@ const ProductGrid = () => {
                   </div>
                 </CardContent>
               </Card>
-            </Link>
+              </Link>
+            </Reveal>
           );
         })}
       </div>
