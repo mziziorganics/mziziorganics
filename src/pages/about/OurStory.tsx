@@ -5,75 +5,80 @@ import PageHeader from "../../components/about/PageHeader";
 import ContentSection from "../../components/about/ContentSection";
 import ImageTextBlock from "../../components/about/ImageTextBlock";
 import AboutSidebar from "../../components/about/AboutSidebar";
+import Reveal from "@/components/ui/reveal";
 
 const OurStory = () => {
   return (
     <div className="min-h-screen bg-background">
       <Header />
-      
+
       <div className="flex">
         <div className="hidden lg:block">
           <AboutSidebar />
         </div>
-        
+
         <main className="w-full lg:w-[70vw] lg:ml-auto px-6">
-          <PageHeader 
-            title="Our Story" 
-            subtitle="Own your story™"
-          />
-          
+          <PageHeader title="Our Story" subtitle="Own your story™" />
+
           <ContentSection>
-            <ImageTextBlock
-              image={founderAmin.url}
-              imageAlt="Amin, founder of Mzizi Organics"
-              title="Back to the root"
-              content="Mzizi means root in Swahili, and that is not decoration — it is the argument. Walk into most homes and you will find a cabinet crowded with hair oils, growth gummies, gut powders and detox teas, each one bought in hope and abandoned by week three. The industry learned that selling more is easier than solving anything. I started Mzizi Organics to reverse that trade: to go back to the organic ways that worked long before the marketing did, and to give people the few things that actually deliver. So we make two products instead of twenty — cold-pressed in small batches, no fillers to bulk out the bottle, no fragrance to hide a thin formula — and we stand behind them. Fewer products, honestly made, used consistently. That is how roots recover, and that is how you own your story."
-              imagePosition="left"
-            />
+            <Reveal>
+              <ImageTextBlock
+                image={founderAmin.url}
+                imageAlt="Amin, founder of Mzizi Organics"
+                title="Back to the root"
+                content="Mzizi means root in Swahili, and that word is the whole argument. Open almost any bathroom cabinet and you will find the evidence: half-used growth oils, gummies bought on a promise, gut powders, detox teas, a shampoo that was going to change everything. Ten, twenty, thirty products tried — and hair, skin and digestion that are no better than they were a year ago. People are not failing. They are being sold hope in a bottle, over and over, by an industry that profits from the next attempt rather than the result. Mzizi Organics exists to end that cycle. Long before laboratories and marketing budgets, people cared for their hair and their bodies with plants they could name — rosemary for the scalp, castor for the strand, amla for the root — and it worked, because the plant was whole, alive and unadulterated. We went back to those ways and refused every shortcut that dulls them: cold-pressed instead of heat-extracted, small batches instead of long shelves, single-origin botanicals bought straight from growers, and formulas with nothing added to bulk out a bottle or perfume a thin idea. What we put our name on is what we have proven on ourselves, our families and our community first. Nothing ships until it works. That is the promise underneath everything we make: no theatre, no filler, no hope tax — just the organic way, done properly, delivered honestly, and used consistently until your roots tell the story for you. Own your story."
+                imagePosition="left"
+              />
+            </Reveal>
           </ContentSection>
 
-          <ContentSection title="Our Heritage">
+          <ContentSection title="What We Stand For">
             <div className="grid md:grid-cols-2 gap-12">
-              <div className="space-y-6">
-                <h3 className="text-xl font-light text-foreground">Traditional Craftsmanship</h3>
+              <Reveal className="space-y-6" variant="left">
+                <h3 className="text-xl font-light text-foreground">Only What Works</h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  Every piece in our collection is meticulously handcrafted by skilled artisans who have honed their craft over generations. We honor traditional techniques while embracing modern innovation, ensuring each piece meets our exacting standards for quality and beauty.
+                  Every formula earns its place. If an ingredient is in the bottle, it is
+                  there because it does something measurable for your scalp, your strands
+                  or your skin — not because it looks impressive on a label.
                 </p>
-              </div>
-              <div className="space-y-6">
-                <h3 className="text-xl font-light text-foreground">Sustainable Future</h3>
+              </Reveal>
+              <Reveal className="space-y-6" variant="right" delay={120}>
+                <h3 className="text-xl font-light text-foreground">The Organic Way</h3>
                 <p className="text-muted-foreground leading-relaxed">
-                  We believe luxury and sustainability can coexist beautifully. Our commitment to ethical sourcing, recycled materials, and responsible manufacturing practices ensures that every piece you wear contributes to a more sustainable future.
+                  Cold-pressed, small-batch, traceable to the farm. We keep the plant as
+                  close to whole as we can, because that is where the potency lives — and
+                  it is the way people cared for themselves long before the marketing came.
                 </p>
-              </div>
+              </Reveal>
             </div>
           </ContentSection>
 
           <ContentSection title="Our Values">
             <div className="grid md:grid-cols-3 gap-8">
-              <div className="space-y-4">
-                <h3 className="text-lg font-light text-foreground">Excellence</h3>
-                <p className="text-muted-foreground">
-                  We pursue perfection in every detail, from the initial design concept to the final polish.
-                </p>
-              </div>
-              <div className="space-y-4">
-                <h3 className="text-lg font-light text-foreground">Authenticity</h3>
-                <p className="text-muted-foreground">
-                  Each piece reflects genuine craftsmanship and tells an authentic story of artistry and care.
-                </p>
-              </div>
-              <div className="space-y-4">
-                <h3 className="text-lg font-light text-foreground">Innovation</h3>
-                <p className="text-muted-foreground">
-                  We continuously evolve our designs and techniques while honoring timeless aesthetic principles.
-                </p>
-              </div>
+              {[
+                {
+                  title: "Honesty",
+                  body: "We say what is in the bottle, where it came from and what it can realistically do for you.",
+                },
+                {
+                  title: "Results",
+                  body: "Consistency over collection. We would rather you finish one thing that works than start ten that do not.",
+                },
+                {
+                  title: "Roots",
+                  body: "Traditional botanical knowledge, treated as science rather than nostalgia.",
+                },
+              ].map((value, index) => (
+                <Reveal key={value.title} className="space-y-4" delay={index * 120}>
+                  <h3 className="text-lg font-light text-foreground">{value.title}</h3>
+                  <p className="text-muted-foreground">{value.body}</p>
+                </Reveal>
+              ))}
             </div>
           </ContentSection>
         </main>
       </div>
-      
+
       <Footer />
     </div>
   );
