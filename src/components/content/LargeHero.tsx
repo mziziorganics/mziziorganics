@@ -5,33 +5,38 @@ import { products } from "@/data/products";
 const LargeHero = () => {
   return (
     <section className="w-full mb-16 px-6">
-      <div className="relative w-full aspect-[4/5] md:aspect-[16/9] overflow-hidden bg-brand-soft">
+      <div className="relative w-full aspect-[4/5] md:aspect-[16/9] overflow-hidden bg-brand-soft group">
         <img
-          src={products[0].hoverImage}
-          alt="Hair growth oil applied to the scalp with a glass dropper"
+          src={products[0].image}
+          alt="Cold-pressed hair growth oil in an amber glass dropper bottle"
           width={1024}
           height={1024}
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover animate-slow-zoom"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-brand/80 via-brand/20 to-transparent" />
         <div className="absolute bottom-0 left-0 right-0 p-6 md:p-12 text-brand-foreground">
-          <p className="text-[0.65rem] tracking-[0.3em] uppercase mb-3 text-brand-foreground/80">
+          <p className="text-[0.65rem] tracking-[0.3em] uppercase mb-3 text-brand-foreground/80 animate-fade-up [animation-delay:80ms]">
             Own your story™
           </p>
-          <h1 className="text-3xl md:text-5xl font-light leading-tight max-w-2xl">
+          <h1 className="text-3xl md:text-5xl font-light leading-tight max-w-2xl animate-fade-up [animation-delay:200ms]">
             Roll it open. Feed it deep.
           </h1>
-          <p className="text-sm font-light mt-4 max-w-md text-brand-foreground/80">
-            Two products that work as one — a titanium derma roller followed by a
-            cold-pressed rosemary scalp oil.
+          <p className="text-sm font-light mt-4 max-w-md text-brand-foreground/80 animate-fade-up [animation-delay:340ms]">
+            A titanium derma roller followed by a cold-pressed rosemary scalp oil — the
+            organic way, done properly.
           </p>
-          <Link
-            to="/category/all-products"
-            className="inline-flex items-center gap-2 mt-6 bg-brand-foreground text-brand px-6 py-3 text-sm font-light hover:opacity-90 transition-opacity"
-          >
-            <span>Shop the ritual</span>
-            <ArrowRight size={14} />
-          </Link>
+          <div className="animate-fade-up [animation-delay:460ms]">
+            <Link
+              to="/category/all-products"
+              className="group/cta inline-flex items-center gap-2 mt-6 bg-brand-foreground text-brand px-6 py-3 text-sm font-light transition-all duration-300 hover:gap-3 hover:opacity-90"
+            >
+              <span>Shop the ritual</span>
+              <ArrowRight
+                size={14}
+                className="transition-transform duration-300 group-hover/cta:translate-x-1"
+              />
+            </Link>
+          </div>
         </div>
       </div>
     </section>
