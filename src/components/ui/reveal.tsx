@@ -63,7 +63,7 @@ const Reveal = ({
       ref={ref as never}
       style={{ transitionDelay: `${delay}ms` }}
       className={cn(
-        "transition-all duration-[900ms] ease-smooth will-change-transform",
+        "transition-all duration-[1400ms] ease-premium will-change-transform",
         visible ? "opacity-100 translate-y-0 translate-x-0 blur-0 scale-100" : cn("opacity-0", variantClass[variant]),
         className
       )}
