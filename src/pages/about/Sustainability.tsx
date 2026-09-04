@@ -22,22 +22,13 @@ const Sustainability = () => {
           />
 
           <ContentSection title="Our Environmental Commitment">
-            <Reveal className="grid md:grid-cols-2 gap-12 mb-16">
-              <div className="space-y-6">
-                <h3 className="text-xl font-light text-foreground">Ethical Sourcing</h3>
-                <p className="text-muted-foreground leading-relaxed">
-                  We buy rosemary, castor and amla directly from growers' cooperatives, at
-                  prices agreed before harvest. Every batch is traceable back to the farm
-                  that pressed it.
-                </p>
-              </div>
-              <div className="space-y-6">
-                <h3 className="text-xl font-light text-foreground">Small-Batch Pressing</h3>
-                <p className="text-muted-foreground leading-relaxed">
-                  Pressing in small runs means nothing sits in a warehouse losing potency —
-                  and nothing is over-produced only to be written off later.
-                </p>
-              </div>
+            <Reveal className="space-y-6 mb-16">
+              <h3 className="text-xl font-light text-foreground">Ethical Sourcing</h3>
+              <p className="text-muted-foreground leading-relaxed">
+                We buy rosemary, castor and amla directly from growers' cooperatives, at
+                prices agreed before harvest. Every batch is traceable back to the farm
+                that pressed it.
+              </p>
             </Reveal>
 
             <Reveal delay={120} className="bg-muted/10 rounded-lg p-8">
