@@ -27,7 +27,7 @@ const ImageTextBlock = ({
           {title}
         </h3>
         {content.split("\n\n").map((para, i) => (
-          <p key={i} className="text-muted-foreground leading-relaxed">
+          <p key={i} className="text-muted-foreground leading-relaxed mt-0 mb-8 last:mb-0">
             {para}
           </p>
         ))}
