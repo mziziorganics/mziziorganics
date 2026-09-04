@@ -32,32 +32,34 @@ const ProductDescription = ({ product }: ProductDescriptionProps) => {
   return (
     <div className="space-y-0 mt-8 border-t border-border">
       {/* Description */}
-      <div className="border-b border-border">
-        <Button
-          variant="ghost"
-          onClick={() => setIsDescriptionOpen(!isDescriptionOpen)}
-          className="w-full h-14 px-0 justify-between hover:bg-transparent hover:text-brand font-light rounded-none transition-colors duration-300 press"
-        >
-          <span>Description</span>
-          {isDescriptionOpen ? (
-            <ChevronUp className="h-4 w-4" />
-          ) : (
-            <ChevronDown className="h-4 w-4" />
+      {product.description.length > 0 && (
+        <div className="border-b border-border">
+          <Button
+            variant="ghost"
+            onClick={() => setIsDescriptionOpen(!isDescriptionOpen)}
+            className="w-full h-14 px-0 justify-between hover:bg-transparent hover:text-brand font-light rounded-none transition-colors duration-300 press"
+          >
+            <span>Description</span>
+            {isDescriptionOpen ? (
+              <ChevronUp className="h-4 w-4" />
+            ) : (
+              <ChevronDown className="h-4 w-4" />
+            )}
+          </Button>
+          {isDescriptionOpen && (
+            <div className="pb-6 space-y-4 animate-fade-up">
+              {product.description.map((paragraph, index) => (
+                <p
+                  key={index}
+                  className="text-sm font-light text-muted-foreground leading-relaxed"
+                >
+                  {paragraph}
+                </p>
+              ))}
+            </div>
           )}
-        </Button>
-        {isDescriptionOpen && (
-          <div className="pb-6 space-y-4 animate-fade-up">
-            {product.description.map((paragraph, index) => (
-              <p
-                key={index}
-                className="text-sm font-light text-muted-foreground leading-relaxed"
-              >
-                {paragraph}
-              </p>
-            ))}
-          </div>
-        )}
-      </div>
+        </div>
+      )}
 
       {/* Product Details */}
       <div className="border-b border-border">
