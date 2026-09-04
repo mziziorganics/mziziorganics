@@ -26,9 +26,11 @@ const ImageTextBlock = ({
         <h3 className="text-2xl font-light text-foreground">
           {title}
         </h3>
-        <p className="text-muted-foreground leading-relaxed">
-          {content}
-        </p>
+        {content.split("\n\n").map((para, i) => (
+          <p key={i} className="text-muted-foreground leading-relaxed">
+            {para}
+          </p>
+        ))}
       </div>
     </div>
   );
