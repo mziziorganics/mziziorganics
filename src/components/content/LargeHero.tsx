@@ -8,7 +8,7 @@ const LargeHero = () => {
       <div className="relative w-full aspect-[4/5] md:aspect-[16/9] overflow-hidden bg-brand-soft group">
         <img
           src={products[0].image}
-          alt="Cold-pressed hair growth oil in an amber glass dropper bottle"
+          alt="Mzizi hair growth oil in a black applicator bottle"
           width={1024}
           height={1024}
           className="w-full h-full object-cover animate-slow-zoom"
