@@ -92,7 +92,7 @@ const SizeGuide = () => {
                   </div>
                   <div className="flex justify-between py-2 border-b border-border">
                     <span className="text-muted-foreground">Frequency</span>
-                    <span className="text-foreground">3 evenings a week</span>
+                    <span className="text-foreground">Daily</span>
                   </div>
                   <div className="flex justify-between py-2 border-b border-border">
                     <span className="text-muted-foreground">Bottle lasts</span>
