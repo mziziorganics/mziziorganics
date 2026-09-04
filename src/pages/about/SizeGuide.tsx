@@ -62,11 +62,11 @@ const SizeGuide = () => {
                   </thead>
                   <tbody>
                     {[
-                      { week: "1 – 2", roller: "1 × per week", oil: "3 evenings", note: "Scalp calms, less flaking" },
-                      { week: "3 – 4", roller: "1 × per week", oil: "3 evenings", note: "Less shedding on wash days" },
-                      { week: "5 – 8", roller: "1 × per week", oil: "3 – 4 evenings", note: "First baby hairs at the hairline" },
-                      { week: "9 – 12", roller: "1 × per week", oil: "3 – 4 evenings", note: "Visible density at the edges" },
-                      { week: "12 +", roller: "New head fitted", oil: "Maintenance, 2 – 3 evenings", note: "Hold the results" },
+                      { week: "1 – 2", roller: "2 – 3 × per week", oil: "Daily", note: "Scalp calms, less flaking" },
+                      { week: "3 – 4", roller: "2 – 3 × per week", oil: "Daily", note: "Less shedding on wash days" },
+                      { week: "5 – 8", roller: "2 – 3 × per week", oil: "Daily", note: "First baby hairs at the hairline" },
+                      { week: "9 – 12", roller: "2 – 3 × per week", oil: "Daily", note: "Visible density at the edges" },
+                      { week: "12 +", roller: "New head fitted", oil: "Daily", note: "Hold the results" },
                     ].map((row, index) => (
                       <tr key={index} className="hover:bg-brand-soft/40">
                         <td className="border border-border p-3">{row.week}</td>
