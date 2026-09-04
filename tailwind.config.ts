@@ -126,12 +126,12 @@ export default {
           },
         },
         "fade-up": {
-          from: { opacity: "0", transform: "translateY(14px)" },
+          from: { opacity: "0", transform: "translateY(22px)" },
           to: { opacity: "1", transform: "translateY(0)" },
         },
         "slow-zoom": {
           from: { transform: "scale(1)" },
-          to: { transform: "scale(1.07)" },
+          to: { transform: "scale(1.08)" },
         },
         "marquee-fade": {
           "0%, 100%": { opacity: "0.55" },
@@ -141,16 +141,17 @@ export default {
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out", 
-        "slide-in": "slide-in 0.3s ease-out",
-        "slide-in-right": "slide-in-right 0.3s ease-out",
-        "fade-in": "fade-in 0.2s ease-out",
-        "fade-up": "fade-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) both",
-        "slow-zoom": "slow-zoom 18s ease-out forwards",
-        "marquee-fade": "marquee-fade 4s ease-in-out infinite",
+        "slide-in": "slide-in 0.5s ease-premium",
+        "slide-in-right": "slide-in-right 0.5s ease-premium",
+        "fade-in": "fade-in 0.7s ease-premium",
+        "fade-up": "fade-up 1.3s cubic-bezier(0.16, 1, 0.3, 1) both",
+        "slow-zoom": "slow-zoom 22s ease-out forwards",
+        "marquee-fade": "marquee-fade 5s ease-in-out infinite",
       },
       transitionTimingFunction: {
         "smooth": "cubic-bezier(0.4, 0, 0.2, 1)",
         "bounce": "cubic-bezier(0.68, -0.55, 0.265, 1.55)",
+        "premium": "cubic-bezier(0.22, 1, 0.36, 1)",
       },
     },
   },
