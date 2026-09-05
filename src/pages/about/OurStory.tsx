@@ -6,11 +6,14 @@ import ContentSection from "../../components/about/ContentSection";
 import ImageTextBlock from "../../components/about/ImageTextBlock";
 import AboutSidebar from "../../components/about/AboutSidebar";
 import Reveal from "@/components/ui/reveal";
+import AboutHero from "@/components/about/AboutHero";
 
 const OurStory = () => {
   return (
     <div className="min-h-screen bg-background">
       <Header />
+
+      <AboutHero />
 
       <div className="flex">
         <div className="hidden lg:block">
