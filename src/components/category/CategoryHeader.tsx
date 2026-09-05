@@ -9,15 +9,11 @@ import {
 } from "@/components/ui/breadcrumb";
 
 interface CategoryHeaderProps {
-  category: string;
+  title: string;
+  intro: string;
 }
 
-const CategoryHeader = ({ category }: CategoryHeaderProps) => {
-  const title = category
-    .split("-")
-    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-    .join(" ");
-
+const CategoryHeader = ({ title, intro }: CategoryHeaderProps) => {
   return (
     <section className="w-full px-6 mb-8">
       <div className="mb-6">
@@ -39,10 +35,7 @@ const CategoryHeader = ({ category }: CategoryHeaderProps) => {
       <div>
         <h1 className="text-3xl md:text-4xl font-light text-foreground">{title}</h1>
         <div className="w-16 h-px bg-brand mt-4" />
-        <p className="text-sm font-light text-muted-foreground mt-4 max-w-lg">
-          A deliberately short line — a cold-pressed scalp oil and the tool that drives it
-          deeper.
-        </p>
+        <p className="text-sm font-light text-muted-foreground mt-4 max-w-lg">{intro}</p>
       </div>
     </section>
   );
