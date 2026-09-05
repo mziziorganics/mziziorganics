@@ -151,7 +151,7 @@ const ShoppingBag = ({ isOpen, onClose, cartItems, updateQuantity, onViewFavorit
                   onClick={onClose}
                   asChild
                 >
-                  <Link to="/category/all-products">
+                  <Link to="/category/haircare">
                     Continue Shopping
                   </Link>
                 </Button>

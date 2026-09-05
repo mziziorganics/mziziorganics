@@ -61,7 +61,7 @@ const Navigation = () => {
   const navItems = [
     {
       name: "Shop",
-      href: "/category/all-products",
+      href: "/category/haircare",
       groups: [
         {
           heading: "Haircare",
@@ -70,6 +70,16 @@ const Navigation = () => {
             { label: "Derma Roller", to: "/product/derma-roller" },
             { label: "Shop all haircare", to: "/category/haircare" },
           ],
+        },
+        {
+          heading: "Health & Wellness",
+          items: [
+            { label: "Coming soon", to: "/category/health-and-wellness" },
+          ],
+        },
+        {
+          heading: "Skincare",
+          items: [{ label: "Coming soon", to: "/category/skincare" }],
         },
       ],
       images: [

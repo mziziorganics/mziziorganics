@@ -5,26 +5,34 @@ import Footer from "../components/footer/Footer";
 import CategoryHeader from "../components/category/CategoryHeader";
 import FilterSortBar from "../components/category/FilterSortBar";
 import ProductGrid from "../components/category/ProductGrid";
+import ComingSoon from "../components/category/ComingSoon";
 import { products } from "@/data/products";
+import { getCategory } from "@/data/categories";
 
 const Category = () => {
   const { category } = useParams();
   const [filtersOpen, setFiltersOpen] = useState(false);
+  const info = getCategory(category);
 
   return (
     <div className="min-h-screen bg-background">
       <Header />
 
       <main className="pt-6">
-        <CategoryHeader category={category || "All Products"} />
+        <CategoryHeader title={info.title} intro={info.intro} />
 
-        <FilterSortBar
-          filtersOpen={filtersOpen}
-          setFiltersOpen={setFiltersOpen}
-          itemCount={products.length}
-        />
-
-        <ProductGrid />
+        {info.comingSoon ? (
+          <ComingSoon title={info.title} note={info.comingSoonNote ?? ""} />
+        ) : (
+          <>
+            <FilterSortBar
+              filtersOpen={filtersOpen}
+              setFiltersOpen={setFiltersOpen}
+              itemCount={products.length}
+            />
+            <ProductGrid />
+          </>
+        )}
       </main>
 
       <Footer />
