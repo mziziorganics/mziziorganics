@@ -21,7 +21,7 @@ const EditorialSection = () => {
           <p className="text-sm font-light text-foreground leading-relaxed">
             Mzizi Organics goes back to the root, because the organic ways worked long
             before the marketing did — rosemary for the scalp, castor for the strand, amla
-            for the root. Cold-pressed, small-batch, traceable, with nothing added to pad
+            for the root. Small-batch, traceable, with nothing added to pad
             a label. We sell what works, and nothing ships until it does.
           </p>
           <p className="text-sm font-light text-brand leading-relaxed">

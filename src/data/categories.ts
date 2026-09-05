@@ -11,7 +11,7 @@ export const categories: CategoryInfo[] = [
     slug: "haircare",
     title: "Haircare",
     intro:
-      "A deliberately short line — a cold-pressed scalp oil and the tool that drives it deeper.",
+      "A deliberately short line — a pure scalp oil and the tool that drives it deeper.",
   },
   {
     slug: "health-and-wellness",
@@ -27,7 +27,7 @@ export const categories: CategoryInfo[] = [
     intro: "Whole-plant botanicals for skin that is fed, not coated.",
     comingSoon: true,
     comingSoonNote:
-      "Cold-pressed oils and single-origin botanicals for the skin are in small-batch testing. We would rather arrive late than arrive with fluff.",
+      "Pure oils and single-origin botanicals for the skin are in small-batch testing. We would rather arrive late than arrive with fluff.",
   },
 ];
 
@@ -36,5 +36,5 @@ export const getCategory = (slug?: string): CategoryInfo =>
     slug: slug ?? "all-products",
     title: "All Products",
     intro:
-      "A deliberately short line — a cold-pressed scalp oil and the tool that drives it deeper.",
+      "A deliberately short line — a pure scalp oil and the tool that drives it deeper.",
   };
