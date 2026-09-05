@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 
 const usps = [
   "Free shipping over KSh 3,000",
-  "Cold-pressed in small batches",
+  "Made in small batches",
   "30-day scalp guarantee",
 ];
 

@@ -27,7 +27,7 @@ const LargeHero = () => {
               Everything begins at the root.
             </h1>
             <p className="text-sm font-light mt-4 max-w-md text-brand-foreground/85 animate-fade-up [animation-delay:340ms]">
-              Cold-pressed, organic botanicals for the scalp — the way people cared for
+              Pure, organic botanicals for the scalp — the way people cared for
               themselves long before the marketing did.
             </p>
             <div className="animate-fade-up [animation-delay:460ms]">
