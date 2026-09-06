@@ -25,7 +25,6 @@ interface ProductDescriptionProps {
 
 const ProductDescription = ({ product }: ProductDescriptionProps) => {
   const [isDescriptionOpen, setIsDescriptionOpen] = useState(false);
-  const [isDetailsOpen, setIsDetailsOpen] = useState(false);
   const [isCareOpen, setIsCareOpen] = useState(false);
   const [isReviewsOpen, setIsReviewsOpen] = useState(false);
 
@@ -60,34 +59,6 @@ const ProductDescription = ({ product }: ProductDescriptionProps) => {
           )}
         </div>
       )}
-
-      {/* Product Details */}
-      <div className="border-b border-border">
-        <Button
-          variant="ghost"
-          onClick={() => setIsDetailsOpen(!isDetailsOpen)}
-          className="w-full h-14 px-0 justify-between hover:bg-transparent hover:text-brand font-light rounded-none transition-colors duration-300 press"
-        >
-          <span>Product Details</span>
-          {isDetailsOpen ? (
-            <ChevronUp className="h-4 w-4" />
-          ) : (
-            <ChevronDown className="h-4 w-4" />
-          )}
-        </Button>
-        {isDetailsOpen && (
-          <div className="pb-6 space-y-3 animate-fade-up">
-            {product.details.map((detail) => (
-              <div key={detail.label} className="flex justify-between">
-                <span className="text-sm font-light text-muted-foreground">
-                  {detail.label}
-                </span>
-                <span className="text-sm font-light text-foreground">{detail.value}</span>
-              </div>
-            ))}
-          </div>
-        )}
-      </div>
 
       {/* How to use */}
       <div className="border-b border-border">
