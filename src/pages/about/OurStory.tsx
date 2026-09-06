@@ -29,7 +29,15 @@ const OurStory = () => {
                 image={founderAmin.url}
                 imageAlt="Amin, founder of Mzizi Organics"
                 title="Back to the root"
-                content="It started with a quiet, persistent struggle in our own home in Nairobi.\n\nFor years our family battled severe stomach acidity, moving through treatment after treatment in search of lasting comfort. We hold deep respect for modern medicine — but for this particular battle, the breakthrough came from the earth. When we stripped everything back and turned to pure, organic remedies, the relief we had been chasing finally arrived.\n\nThat changed everything.\n\nIn Swahili, Mzizi means root. That single word became our whole philosophy: whether you are healing your gut, restoring your skin or regrowing your hair, the real answer always sits at the source.\n\nWe are not here to reject science. We are here to reclaim the raw efficacy that most commercial products have forgotten. Look inside almost any bathroom cabinet and you will find the same story — bottles full of promises, and a year later, no change at all.\n\nOur standard is ruthlessly simple: we only make things that work. Pure botanicals for your scalp, organic blends for your body, ingredients that proved themselves long before the marketing did. No fillers. No shortcuts.\n\nWe went back to the roots to take control of our own health. Now we are here to help you own yours."
+                content={[
+                  "It started with a quiet, persistent struggle in our own home in Nairobi.",
+                  "For years our family battled severe stomach acidity, moving through treatment after treatment in search of lasting comfort. We hold deep respect for modern medicine — but for this particular battle, the breakthrough came from the earth. When we stripped everything back and turned to pure, organic remedies, the relief we had been chasing finally arrived.",
+                  "That changed everything.",
+                  "In Swahili, Mzizi means root. That single word became our whole philosophy: whether you are healing your gut, restoring your skin or regrowing your hair, the real answer always sits at the source.",
+                  "We are not here to reject science. We are here to reclaim the raw efficacy that most commercial products have forgotten. Look inside almost any bathroom cabinet and you will find the same story — bottles full of promises, and a year later, no change at all.",
+                  "Our standard is ruthlessly simple: we only make things that work. Pure botanicals for your scalp, organic blends for your body, ingredients that proved themselves long before the marketing did. No fillers. No shortcuts.",
+                  "We went back to the roots to take control of our own health. Now we are here to help you own yours."
+                ]}
                 imagePosition="left"
               />
             </Reveal>
