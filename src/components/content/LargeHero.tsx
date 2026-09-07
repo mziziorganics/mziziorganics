@@ -27,15 +27,15 @@ const LargeHero = () => {
               Everything begins at the root.
             </h1>
             <p className="text-sm font-light mt-4 max-w-md text-brand-foreground/85 animate-fade-up [animation-delay:340ms]">
-              Pure, organic botanicals for the scalp — the way people cared for
-              themselves long before the marketing did.
+              Nourishing you at the root, so you can flourish on the outside.
             </p>
             <div className="animate-fade-up [animation-delay:460ms]">
               <Link
                 to="/category/haircare"
                 className="group/cta inline-flex items-center gap-2 mt-8 bg-brand-foreground text-brand px-6 py-3 text-sm font-light transition-all duration-300 hover:gap-3 hover:opacity-90"
               >
-                <span>Shop the ritual</span>
+                <span>Shop</span>
+
                 <ArrowRight
                   size={14}
                   className="transition-transform duration-300 group-hover/cta:translate-x-1"
