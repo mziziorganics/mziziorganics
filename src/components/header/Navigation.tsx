@@ -97,6 +97,7 @@ const Navigation = () => {
             { label: "Our Story", to: "/about/our-story" },
             { label: "Sustainability", to: "/about/sustainability" },
             { label: "How to Use", to: "/about/size-guide" },
+            { label: "Tips & Tricks", to: "/tips-and-tricks" },
             { label: "Customer Care", to: "/about/customer-care" },
           ],
         },
