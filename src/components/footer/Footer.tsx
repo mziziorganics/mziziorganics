@@ -112,6 +112,9 @@ Own your story™
                   </Link>
                 </li>
               </ul>
+            </div>
+
+            {/* Connect */}
             <div>
               <h4 className="text-xs font-normal mb-4 tracking-[0.15em] uppercase">Connect</h4>
               <ul className="space-y-2">
