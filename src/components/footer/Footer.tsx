@@ -36,7 +36,7 @@ Own your story™
           </div>
 
           {/* Link lists - Right side */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {/* Shop */}
             <div>
               <h4 className="text-xs font-normal mb-4 tracking-[0.15em] uppercase">Shop</h4>
