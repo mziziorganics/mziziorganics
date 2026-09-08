@@ -36,7 +36,7 @@ Own your story™
           </div>
 
           {/* Link lists - Right side */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {/* Shop */}
             <div>
               <h4 className="text-xs font-normal mb-4 tracking-[0.15em] uppercase">Shop</h4>
@@ -94,6 +94,21 @@ Own your story™
                     className="text-sm font-light text-brand-foreground/70 hover:text-brand-foreground transition-colors"
                   >
                     Sustainability
+                  </Link>
+                </li>
+              </ul>
+            </div>
+
+            {/* Discover */}
+            <div>
+              <h4 className="text-xs font-normal mb-4 tracking-[0.15em] uppercase">Discover</h4>
+              <ul className="space-y-2">
+                <li>
+                  <Link
+                    to="/tips-and-tricks"
+                    className="text-sm font-light text-brand-foreground/70 hover:text-brand-foreground transition-colors"
+                  >
+                    Tips &amp; Tricks
                   </Link>
                 </li>
               </ul>

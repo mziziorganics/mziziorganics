@@ -8,6 +8,7 @@ import Index from "./pages/Index";
 import Category from "./pages/Category";
 import ProductDetail from "./pages/ProductDetail";
 import Checkout from "./pages/Checkout";
+import TipsAndTricks from "./pages/TipsAndTricks";
 import NotFound from "./pages/NotFound";
 import OurStory from "./pages/about/OurStory";
 import Sustainability from "./pages/about/Sustainability";
@@ -30,6 +31,7 @@ const App = () => (
           <Route path="/category/:category" element={<Category />} />
           <Route path="/product/:productId" element={<ProductDetail />} />
           <Route path="/checkout" element={<Checkout />} />
+          <Route path="/tips-and-tricks" element={<TipsAndTricks />} />
           <Route path="/about/our-story" element={<OurStory />} />
           <Route path="/about/sustainability" element={<Sustainability />} />
           <Route path="/about/size-guide" element={<SizeGuide />} />
