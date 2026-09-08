@@ -99,7 +99,19 @@ Own your story™
               </ul>
             </div>
 
-            {/* Connect */}
+            {/* Discover */}
+            <div>
+              <h4 className="text-xs font-normal mb-4 tracking-[0.15em] uppercase">Discover</h4>
+              <ul className="space-y-2">
+                <li>
+                  <Link
+                    to="/tips-and-tricks"
+                    className="text-sm font-light text-brand-foreground/70 hover:text-brand-foreground transition-colors"
+                  >
+                    Tips &amp; Tricks
+                  </Link>
+                </li>
+              </ul>
             <div>
               <h4 className="text-xs font-normal mb-4 tracking-[0.15em] uppercase">Connect</h4>
               <ul className="space-y-2">
